@@ -1,0 +1,22 @@
+{
+  "label": "LOCAL PILOT — NOT FOR PUBLICATION / YEREL PİLOT — YAYINLANMAZ",
+  "publishable": false,
+  "groups": [
+    {
+      "group": "io/25/virtual/16/64",
+      "runs": 1,
+      "medianBatchSeconds": 0.014258711267605634,
+      "medianOperationsPerSecond": 4488.484183377891,
+      "medianRunP95Seconds": 0.014444875,
+      "publishable": false
+    },
+    {
+      "group": "report/8/platform/16/5000",
+      "runs": 1,
+      "medianBatchSeconds": 9.523349011503886e-06,
+      "medianOperationsPerSecond": 105005.0773936809,
+      "medianRunP95Seconds": 1.0291e-05,
+      "publishable": false
+    }
+  ]
+}

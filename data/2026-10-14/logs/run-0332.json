@@ -1,0 +1,22 @@
+{
+  "command": [
+    "$HOME/Library/Java/JavaVirtualMachines/corretto-25.0.3/Contents/Home/bin/java",
+    "-Xms256m",
+    "-Xmx256m",
+    "-XX:+UseG1GC",
+    "-cp",
+    "artifacts/labs/java8-25-20261014-v2/classes",
+    "OrderBench",
+    "cpu",
+    "platform",
+    "64",
+    "16",
+    "55333",
+    "5000",
+    "1000"
+  ],
+  "returncode": 0,
+  "stdout": "{\"task\":\"cpu\",\"executor\":\"platform\",\"size\":64,\"limit\":16,\"batches\":1369,\"operations\":87616,\"elapsedNanos\":1000716542,\"processCpuNanos\":6268054000,\"p50Nanos\":387958,\"p95Nanos\":733958,\"p99Nanos\":888417,\"checksum\":73147513107,\"gcCollections\":0,\"heapUsedAtEndBytes\":33994856,\"errors\":0,\"publishable\":false}\n",
+  "stderr": "",
+  "processElapsedSeconds": 6.091424542013556
+}

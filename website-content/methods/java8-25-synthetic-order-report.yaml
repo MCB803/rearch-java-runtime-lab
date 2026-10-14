@@ -1,0 +1,17 @@
+{
+  "id": "java8-25-synthetic-order-report",
+  "title": {
+    "tr": "Aynı bytecode ile sipariş raporu süresi",
+    "en": "Order-report duration using the same bytecode"
+  },
+  "description": {
+    "tr": "1.000–1.000.000 kayıt, her noktada iki runtime ve on taze JVM. Aynı çıktı bağımsız Python hesabıyla doğrulanır; rapor başına sürelerin medyanı alınır.",
+    "en": "1,000–1,000,000 records, two runtimes and ten fresh JVMs per point. An independent Python oracle checks equal output; median per-report duration is reported."
+  },
+  "protocol": {
+    "tr": "Java 8 javac ile bir kez derlenen aynı bytecode; Corretto 1.8.0_432-b06 ve 25.0.3+9-LTS, native arm64 Apple M3, 24 GiB RAM. Her JVM -Xms256m -Xmx256m -XX:+UseG1GC, 5 sn ısınma ve en az 1 sn ölçüm kullanır. Veri üretimi pencere dışında; tarama, gruplama, checksum ve harness döngüsü içinde. elapsedNanos/batches her koşunun rapor süresidir; on koşunun medyanı gösterilir. Yedi boyut ve tüm tekrarlar saklanır. Paylaşılan masaüstü, kısa ölçüm penceresi ve farklı patch seviyeleri sınırlardır; JMH veya üretim kapasitesi testi değildir.",
+    "en": "The same bytecode is compiled once by Java 8 javac; Corretto 1.8.0_432-b06 and 25.0.3+9-LTS on native arm64 Apple M3 with 24 GiB RAM. Each JVM uses -Xms256m -Xmx256m -XX:+UseG1GC, 5 s warmup and at least 1 s measurement. Data generation is outside the window; scanning, grouping, checksums and harness-loop overhead are inside. elapsedNanos/batches is the per-run report duration; the median of ten runs is shown. All seven sizes and repetitions are retained. Shared desktop, short windows and different patch levels are limitations; this is not JMH or a production capacity test."
+  },
+  "scriptsUrl": "https://github.com/MCB803/rearch-java-runtime-lab/blob/main/docs/labs/java-modernization/run.py",
+  "draft": false
+}

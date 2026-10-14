@@ -1,0 +1,22 @@
+{
+  "command": [
+    "$HOME/Library/Java/JavaVirtualMachines/corretto-25.0.3/Contents/Home/bin/java",
+    "-Xms256m",
+    "-Xmx256m",
+    "-XX:+UseG1GC",
+    "-cp",
+    "artifacts/labs/java8-25-20261014/classes",
+    "OrderBench",
+    "io",
+    "platform",
+    "64",
+    "128",
+    "60872",
+    "5000",
+    "1000"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Exception in thread \"main\" java.util.concurrent.ExecutionException: java.net.BindException: Can't assign requested address\n\tat java.base/java.util.concurrent.FutureTask.report(FutureTask.java:124)\n\tat java.base/java.util.concurrent.FutureTask.get(FutureTask.java:207)\n\tat OrderBench$Workload.batch(OrderBench.java:120)\n\tat OrderBench.main(OrderBench.java:168)\nCaused by: java.net.BindException: Can't assign requested address\n\tat java.base/sun.nio.ch.Net.connect0(Native Method)\n\tat java.base/sun.nio.ch.Net.connect(Net.java:546)\n\tat java.base/sun.nio.ch.Net.connect(Net.java:535)\n\tat java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)\n\tat java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)\n\tat java.base/java.net.Socket.connect(Socket.java:659)\n\tat OrderBench.ioJob(OrderBench.java:57)\n\tat OrderBench.access$200(OrderBench.java:20)\n\tat OrderBench$Workload$1.call(OrderBench.java:113)\n\tat OrderBench$Workload$1.call(OrderBench.java:109)\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)\n\tat java.base/java.lang.Thread.run(Thread.java:1474)\n",
+  "processElapsedSeconds": 1.8902189169893973
+}

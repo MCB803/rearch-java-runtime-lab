@@ -1,0 +1,3594 @@
+{
+  "label": "LOCAL PILOT — NOT FOR PUBLICATION / YEREL PİLOT — YAYINLANMAZ",
+  "publishable": false,
+  "status": "failed",
+  "startedAt": "2026-10-14T10:19:38.478896+00:00",
+  "profile": "full-pilot",
+  "hardware": {
+    "system": "Darwin",
+    "release": "25.5.0",
+    "architecture": "arm64",
+    "logicalCpus": 8,
+    "machdep.cpu.brand_string": "Apple M3",
+    "hw.memsize": "25769803776",
+    "hw.physicalcpu": "8"
+  },
+  "jdks": {
+    "8": {
+      "home": "$HOME/Library/Java/JavaVirtualMachines/corretto-1.8.0_432/Contents/Home",
+      "properties": {
+        "java.runtime.version": "1.8.0_432-b06",
+        "java.vendor": "Amazon.com Inc.",
+        "java.vm.name": "OpenJDK 64-Bit Server VM",
+        "os.arch": "aarch64"
+      }
+    },
+    "25": {
+      "home": "$HOME/Library/Java/JavaVirtualMachines/corretto-25.0.3/Contents/Home",
+      "properties": {
+        "java.runtime.version": "25.0.3+9-LTS",
+        "java.vendor": "Amazon.com Inc.",
+        "java.vm.name": "OpenJDK 64-Bit Server VM",
+        "os.arch": "aarch64"
+      }
+    }
+  },
+  "jvmFlags": [
+    "-Xms256m",
+    "-Xmx256m",
+    "-XX:+UseG1GC"
+  ],
+  "sourceSha256": {
+    ".gitignore": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+    "OrderBench.java": "1f93895db189c2c4dd461b036855753fe48a2733bf47ae74391fce2c81a7c6e5",
+    "README.md": "83bea11773b85e2f132a8c7002d9086a367e4243f0e18bc1f67aa00956bc7cb2",
+    "run.py": "f100f150bfae9a951270c5c1659bbfa389a1343f0e6951543b379d2ae68f1e7e",
+    "test_harness.py": "e2b59c4ea3a8b6671017444ac940af6a2c3ecb7b81ed30860c32ff53e9575f82"
+  },
+  "jobs": [
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 2
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 1
+    },
+    {
+      "task": "io",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 1000000,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 100000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 1
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 3
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "report",
+      "jdk": 8,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 5000,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 500000,
+      "limit": 16,
+      "repeat": 10
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 10000,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 4
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 50000,
+      "limit": 16,
+      "repeat": 5
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 16,
+      "limit": 16,
+      "repeat": 8
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 128,
+      "repeat": 4
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 256,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 6
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 10
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 128,
+      "repeat": 2
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 256,
+      "limit": 16,
+      "repeat": 9
+    },
+    {
+      "task": "cpu",
+      "jdk": 25,
+      "executor": "virtual",
+      "size": 64,
+      "limit": 128,
+      "repeat": 8
+    },
+    {
+      "task": "report",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 1000,
+      "limit": 16,
+      "repeat": 3
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 16,
+      "limit": 16,
+      "repeat": 7
+    },
+    {
+      "task": "io",
+      "jdk": 25,
+      "executor": "platform",
+      "size": 64,
+      "limit": 16,
+      "repeat": 9
+    }
+  ],
+  "warmupMilliseconds": 5000,
+  "measurementMilliseconds": 1000,
+  "dependency": {
+    "jdk": 25,
+    "bind": "127.0.0.1",
+    "workers": 32,
+    "configuredDelayMilliseconds": 2
+  },
+  "environmentNotes": [
+    "Shared developer workstation; desktop browser and the existing website development server remain running",
+    "Other project agents were asked to avoid heavy build and test work during measurement",
+    "No unrelated process is stopped; host load averages are recorded before and after every run"
+  ],
+  "limitations": [
+    "Synthetic newly written harness, not a migrated customer or upstream application",
+    "Warmup stability not established",
+    "Loopback dependency shares host CPU",
+    "No isolated CPU quota",
+    "No RSS, GC pause distribution, cost or security conclusions",
+    "Installed JDK patch currency not approved for publication"
+  ],
+  "failure": "Run 3 failed; full failure output retained in logs",
+  "finishedAt": "2026-10-14T10:19:53.389403+00:00",
+  "completedRuns": 2
+}

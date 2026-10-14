@@ -1,0 +1,176 @@
+---
+{
+  "translationKey": "java8-25-synthetic-orders",
+  "title": "Java 8 → 25: aynı sipariş raporu, iki runtime",
+  "summary": "Aynı bytecode ile bellekte 1 milyon sipariş raporu: 1,891 ms → 1,886 ms. Yedi veri boyutu ve 440 gerçek JVM koşusuyla sentetik runtime deneyi.",
+  "kind": "lab",
+  "status": "completed",
+  "date": "2026-10-14",
+  "service": "app-modernization",
+  "technologies": [
+    "java"
+  ],
+  "segments": [
+    "kobi",
+    "kurumsal",
+    "partner"
+  ],
+  "from": [
+    "Corretto 8u432"
+  ],
+  "to": [
+    "Corretto 25.0.3"
+  ],
+  "repoUrl": "https://github.com/MCB803/rearch-java-runtime-lab",
+  "rawDataUrl": "https://rearchlabs.com/labs/java8-25-2026-10-14/raw.csv",
+  "featured": true,
+  "draft": false,
+  "media": {
+    "before": "../../../assets/labs/java8-25/report-8-tr.png",
+    "after": "../../../assets/labs/java8-25/report-25-tr.png"
+  },
+  "metrics": [
+    {
+      "id": "million-order-report",
+      "label": "Bellekte 1 milyon sipariş raporu",
+      "unit": "ms",
+      "direction": "lower_is_better",
+      "before": 1.8911585538752365,
+      "after": 1.885570228591479,
+      "runs": 10,
+      "aggregation": "median",
+      "method": "java8-25-synthetic-order-report",
+      "primary": true,
+      "pillars": [
+        "performance"
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "report-record-count",
+      "title": "Sipariş sayısına göre rapor süresi",
+      "xLabel": "Sentetik sipariş kaydı",
+      "yUnit": "µs",
+      "x": [
+        1000,
+        5000,
+        10000,
+        50000,
+        100000,
+        500000,
+        1000000
+      ],
+      "before": [
+        2.035105909568195,
+        9.633475245145483,
+        19.107645440335947,
+        94.80003012521271,
+        189.18973733711283,
+        952.2379212541343,
+        1891.1585538752365
+      ],
+      "after": [
+        2.0275532233494835,
+        9.58237706504789,
+        19.12290453865484,
+        94.5539591959532,
+        188.54582496429168,
+        945.3330851273195,
+        1885.570228591479
+      ],
+      "beforeFailures": []
+    }
+  ],
+  "environment": {
+    "summary": "Apple M3 · 8 çekirdek · 24 GiB RAM · macOS Darwin 25.5.0 · native arm64. Paylaşılan geliştirme makinesi; tarayıcı ve site geliştirme sunucusu açık.",
+    "data": "1.000–1.000.000 deterministik sipariş; müşteri verisi yok. Tam sayı kuruşlar, iptal filtresi ve 84 bölge/ay kovası; aynı çıktı checksum ile doğrulandı.",
+    "tools": [
+      "Amazon Corretto 1.8.0_432-b06",
+      "Amazon Corretto 25.0.3+9-LTS",
+      "Java 8 javac → same bytecode",
+      "Python standard library oracle",
+      "-Xms256m -Xmx256m -XX:+UseG1GC"
+    ],
+    "repetitions": "44 kol × 10 taze JVM = 440 koşu. Her JVM: 5 sn ısınma, en az 1 sn ölçüm; sabit rastgele sıra; bütün tekrarlar dahil."
+  },
+  "process": [
+    {
+      "title": "Deney kapsamı",
+      "ai": "Aynı iş çıktısını üreten sentetik rapor, I/O ve CPU kontrolü tasarlandı.",
+      "human": "Site sahibi yaygın Java sistemlerini karşılaştırma ve gerçek ölçüm yayımlama yönünü belirledi.",
+      "hours": null
+    },
+    {
+      "title": "Çalıştırma ve doğrulama",
+      "ai": "Düzenek yazıldı; gerçek JVM süreçleri çalıştırıldı, bağımsız checksum ve dosya bütünlüğü denetlendi. Başarısız ilk deneme ayrı korundu.",
+      "human": "Yerel makinede tam ölçüm yapılması onaylandı. Bu adım için ayrı insan çalışma saati veya kod inceleme kaydı tutulmadı.",
+      "hours": null
+    },
+    {
+      "title": "Açık kanıt paketi",
+      "ai": "Tüm ölçümler, kaynaklar, kontrol kolları ve iki dilde sonuç metni hazırlandı; ham değerler değiştirilmedi.",
+      "human": "Site sahibi yayına açılmasını istedi. Otomasyon süresi insan emeği saati olarak yazılmadı.",
+      "hours": null
+    }
+  ]
+}
+---
+
+## Bu rapor hangi işi yapıyor?
+
+Bir sipariş listesinden iptal edilen kayıtları çıkarıp tutarları bölge ve aya göre topluyoruz. Veri bir kez üretiliyor; zamanlanan bölüm tarama, toplama ve sonuç kontrolü. Veritabanı, ağ veya ekran çizimi rapor süresine dahil değil.
+
+Kod Java 8 ile bir kez derlendi. Aynı bytecode, aynı veri ve aynı heap/GC bayraklarıyla iki kurulu runtime'da çalıştı. Bu çalışma için yeni yazılan sentetik uygulama kullanıldı; geçmiş bir müşteri uygulamasının dönüşümü olarak sunulmuyor. Yukarıdaki görseller, gerçek ölçümlerden üretilen rapor görüntüleyicisinin ekranlarıdır.
+
+## Bir milyon kayıtta ne değişti?
+
+Önceden seçilen birincil noktada medyan süre **1,891 ms'den 1,886 ms'ye** geldi: bu koşullarda **%0,3 daha kısa**. Her değer on ayrı JVM'nin rapor başına ortalama sürelerinin medyanıdır. Tekrar aralığı Java 8 için 1,875–1,91 ms, Java 25 için 1,848–1,92 ms oldu. Yedi veri noktasının tamamı grafikte ve ham dosyada bulunur; yavaş tekrarlar çıkarılmadı.
+
+Bu küçük medyan farkı, örtüşen tekrar aralıklarıyla birlikte okunmalı. Bu işte yalnız runtime değiştirmek belirgin bir hız kazancı göstermedi; %0,3 farkı tek başına geçişin gerekçesi yapmıyoruz. İstatistiksel anlamlılık iddiası veya güven aralığı hesaplaması yoktur.
+
+Runtime değişimini ürününüzde değerlendirmek için ilk iş, sizin günlük raporunuzu veya bekleyen işleminizi aynı çıktı kontrolüyle karşılaştırmaktır. Böylece teknoloji sürümünden önce işin kendisi için karar verirsiniz.
+
+## Bekleyen iş ile hesap yapan iş aynı değil
+
+Rapor deneyine iki kontrol ekledik: gerçek loopback TCP bağlantısıyla cevap bekleyen işler ve 20.000 adımlı sayısal hesap yapan işler. Her grupta 16, 64 ve 256 iş bir arada sunuldu. Bunlar eşzamanlı insan kullanıcı sayıları değildir.
+
+Java 25'te platform ve virtual thread kolları hem 16 hem 128 izinle ölçüldü. İzin sayısını artırmanın etkisiyle thread türünün etkisini ayrı okuyabilirsiniz. Bağımlılık servisinin 32 çalışanı ve her istekte tanımlı 20 ms beklemesi vardır; daha fazla istemci işi bağımlılığın kapasitesini ortadan kaldırmaz.
+
+Aşağıdaki değerler on JVM koşusunun medyan **batch** süresidir; iş başına gecikme değildir. Her işin kuyruğu içeren p95'i ayrıca ham veride ve dağılım dosyasında tutulur.
+
+### TCP bekleme kontrolü
+
+| Runtime / executor / izin | 16 iş · ms | 64 iş · ms | 256 iş · ms |
+| --- | ---: | ---: | ---: |
+| Java 8 / platform / 16 | 31,602 | 119,495 | 454,72 |
+| Java 25 / platform / 16 | 31,098 | 114,674 | 438,213 |
+| Java 25 / virtual / 16 | 30,892 | 115,55 | 430,669 |
+| Java 25 / platform / 128 | 31,256 | 60,785 | 220,083 |
+| Java 25 / virtual / 128 | 31,106 | 60,939 | 221,106 |
+
+### CPU kontrolü
+
+| Runtime / executor / izin | 16 iş · ms | 64 iş · ms | 256 iş · ms |
+| --- | ---: | ---: | ---: |
+| Java 8 / platform / 16 | 0,251 | 0,69 | 2,5 |
+| Java 25 / platform / 16 | 0,254 | 0,731 | 2,619 |
+| Java 25 / virtual / 16 | 0,232 | 0,652 | 2,497 |
+| Java 25 / platform / 128 | 0,258 | 0,696 | 2,587 |
+| Java 25 / virtual / 128 | 0,235 | 0,684 | 2,477 |
+
+## Bu ortamın sınırları
+
+Ölçüm tek bir paylaşılan Apple M3 makinede yapıldı. Tarayıcı ve geliştirme sunucusu açık kaldı; başka ajanlardan ağır test/build çalıştırmamaları istendi. Bir dakikalık sistem yükü 2,56–21,14 aralığındaydı; her koşunun öncesi/sonrası ham kayıtta bulunur. CPU kotası veya ayrı yük üretici kullanılmadı; doğal işletim sistemi ve tarayıcı etkinliği ayrı izole edilmedi. Sabit 5 saniyelik ısınma, JIT'in tamamen kararlı duruma ulaştığını kanıtlamaz.
+
+Corretto **8u432-b06** ile **25.0.3+9-LTS** karşılaştırıldı. Java 8 tarafı güncel yama diye tanımlanmaz; ana sürüm ve yama farklılıkları bu deneyde ayrı ayrı izole edilmedi. Sonuçlar bu build'lere ve işlere aittir. Fiyat, lisans, RSS/tepe bellek, GC duraklamaları veya güvenlik açığı ölçülmedi; bunlardan tasarruf ya da güvenlik oranı türetilmedi.
+
+İlk tam deneme üçüncü süreçte geçici TCP portları tükenince durdu. Tüm kayıtları korundu. Bağımlılığın sentetik beklemesi 2 ms'den 20 ms'ye alındı ve her JVM için yeni bağımlılık portu açıldı; ardından 440 koşunun tamamı baştan çalıştırıldı. İlk denemenin iki tamamlanan sonucu bu tabloya eklenmedi.
+
+Tam koşunun duvar saati süresi 48,7 dakikadır; bu, insan çalışma saati değildir. İnsan saatleri kayıtlı olmadığı için süreç bölümünde sayısal emek iddiası yoktur.
+
+## Kaynaklar ve tekrar çalıştırma
+
+[440 ham ölçüm — CSV](https://rearchlabs.com/labs/java8-25-2026-10-14/raw.csv), [tüm dağılımlar](https://rearchlabs.com/labs/java8-25-2026-10-14/distributions.json), [ortam ve koşu manifesti](https://rearchlabs.com/labs/java8-25-2026-10-14/manifest.json), [yayın inceleme kaydı](https://rearchlabs.com/labs/java8-25-2026-10-14/publication-review.json) ve [kaynak + tüm loglar — ZIP](https://rearchlabs.com/labs/java8-25-2026-10-14/rearch-java-runtime-lab-2026-10-14.zip) açıktır. Ham dosyalardaki `publishable: false`, koşucunun otomatik yayın onayı vermediğini belirtir; bu bayraklar değiştirilmeden ayrı bir yayın inceleme kaydı hazırlanmıştır.
+
+[Açık kaynak deposundaki](https://github.com/MCB803/rearch-java-runtime-lab) komutlarla aynı matrisi yeniden çalıştırabilirsiniz. [Oracle'ın virtual thread açıklaması](https://docs.oracle.com/en/java/javase/25/core/virtual-threads.html) bekleyen I/O ve CPU işlerinin ayrımını açıklar. [Amazon Corretto 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/what-is-corretto-8.html) ve [Corretto 25](https://docs.aws.amazon.com/corretto/latest/corretto-25-ug/what-is-corretto-25.html) dağıtım belgeleri destek modelini açıklar; bu sayfalar kurulu eski build'in güncel olduğunu göstermez. Harness [JMH](https://github.com/openjdk/jmh) kullanmaz.

@@ -1,0 +1,358 @@
+{
+  "label": "LOCAL PILOT — NOT FOR PUBLICATION / YEREL PİLOT — YAYINLANMAZ",
+  "publishable": false,
+  "groups": [
+    {
+      "group": "cpu/25/platform/128/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.0002583860829590125,
+      "medianOperationsPerSecond": 61923.53501395843,
+      "medianRunP95Seconds": 0.0002584375,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/platform/128/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.002586660290625,
+      "medianOperationsPerSecond": 98973.884368602,
+      "medianRunP95Seconds": 0.0025033955,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/platform/128/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.00069634631496647,
+      "medianOperationsPerSecond": 91908.63300865077,
+      "medianRunP95Seconds": 0.0006649995000000001,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/platform/16/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.00025363022107688393,
+      "medianOperationsPerSecond": 63084.63085479851,
+      "medianRunP95Seconds": 0.000253396,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/platform/16/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.0026187441288739264,
+      "medianOperationsPerSecond": 97822.89911277615,
+      "medianRunP95Seconds": 0.0026252705,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/platform/16/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.0007311858462736385,
+      "medianOperationsPerSecond": 87529.0532808977,
+      "medianRunP95Seconds": 0.0007324790000000001,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/virtual/128/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.0002354646097783957,
+      "medianOperationsPerSecond": 67955.36955765879,
+      "medianRunP95Seconds": 0.0002397715,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/virtual/128/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.002477462544231075,
+      "medianOperationsPerSecond": 103333.29476749772,
+      "medianRunP95Seconds": 0.0023164375,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/virtual/128/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.0006837514447247922,
+      "medianOperationsPerSecond": 93608.40161613915,
+      "medianRunP95Seconds": 0.000654521,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/virtual/16/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.0002323829655938143,
+      "medianOperationsPerSecond": 68851.90435118752,
+      "medianRunP95Seconds": 0.000232875,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/virtual/16/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.002497410824216418,
+      "medianOperationsPerSecond": 102506.44940751647,
+      "medianRunP95Seconds": 0.002351917,
+      "publishable": false
+    },
+    {
+      "group": "cpu/25/virtual/16/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.000651633374267101,
+      "medianOperationsPerSecond": 98214.73753846524,
+      "medianRunP95Seconds": 0.000617271,
+      "publishable": false
+    },
+    {
+      "group": "cpu/8/platform/16/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.0002508090253327919,
+      "medianOperationsPerSecond": 63794.11279319125,
+      "medianRunP95Seconds": 0.00025227050000000003,
+      "publishable": false
+    },
+    {
+      "group": "cpu/8/platform/16/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.0024998510506708733,
+      "medianOperationsPerSecond": 102412.5538688754,
+      "medianRunP95Seconds": 0.002343896,
+      "publishable": false
+    },
+    {
+      "group": "cpu/8/platform/16/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.0006904849751898461,
+      "medianOperationsPerSecond": 92705.69508891425,
+      "medianRunP95Seconds": 0.00066925,
+      "publishable": false
+    },
+    {
+      "group": "io/25/platform/128/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.03125646631818182,
+      "medianOperationsPerSecond": 511.8980188761354,
+      "medianRunP95Seconds": 0.0326203125,
+      "publishable": false
+    },
+    {
+      "group": "io/25/platform/128/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.22008265840000002,
+      "medianOperationsPerSecond": 1163.20342443074,
+      "medianRunP95Seconds": 0.2093402085,
+      "publishable": false
+    },
+    {
+      "group": "io/25/platform/128/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.060785087,
+      "medianOperationsPerSecond": 1052.8909438326968,
+      "medianRunP95Seconds": 0.06062025,
+      "publishable": false
+    },
+    {
+      "group": "io/25/platform/16/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.03109842740909091,
+      "medianOperationsPerSecond": 514.4972222369445,
+      "medianRunP95Seconds": 0.031423583,
+      "publishable": false
+    },
+    {
+      "group": "io/25/platform/16/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.4382126528333333,
+      "medianOperationsPerSecond": 584.1912729831992,
+      "medianRunP95Seconds": 0.4132790625,
+      "publishable": false
+    },
+    {
+      "group": "io/25/platform/16/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.11467371294444445,
+      "medianOperationsPerSecond": 558.1708115259928,
+      "medianRunP95Seconds": 0.113437396,
+      "publishable": false
+    },
+    {
+      "group": "io/25/virtual/128/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.031106123387310607,
+      "medianOperationsPerSecond": 514.3846174377784,
+      "medianRunP95Seconds": 0.031829437,
+      "publishable": false
+    },
+    {
+      "group": "io/25/virtual/128/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.2211061792,
+      "medianOperationsPerSecond": 1157.8330272615199,
+      "medianRunP95Seconds": 0.21022922900000002,
+      "publishable": false
+    },
+    {
+      "group": "io/25/virtual/128/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.06093882844117647,
+      "medianOperationsPerSecond": 1050.2354137780674,
+      "medianRunP95Seconds": 0.060665562500000006,
+      "publishable": false
+    },
+    {
+      "group": "io/25/virtual/16/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.03089183143939394,
+      "medianOperationsPerSecond": 517.9417575422386,
+      "medianRunP95Seconds": 0.032085521,
+      "publishable": false
+    },
+    {
+      "group": "io/25/virtual/16/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.43066853483333334,
+      "medianOperationsPerSecond": 594.4354170554245,
+      "medianRunP95Seconds": 0.4089563125,
+      "publishable": false
+    },
+    {
+      "group": "io/25/virtual/16/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.11554957405555555,
+      "medianOperationsPerSecond": 553.874848072446,
+      "medianRunP95Seconds": 0.11481439600000001,
+      "publishable": false
+    },
+    {
+      "group": "io/8/platform/16/16",
+      "runs": 10,
+      "medianBatchSeconds": 0.031601589828125,
+      "medianOperationsPerSecond": 506.3058895259426,
+      "medianRunP95Seconds": 0.0327072705,
+      "publishable": false
+    },
+    {
+      "group": "io/8/platform/16/256",
+      "runs": 10,
+      "medianBatchSeconds": 0.45471975016666666,
+      "medianOperationsPerSecond": 562.9863109017626,
+      "medianRunP95Seconds": 0.432483458,
+      "publishable": false
+    },
+    {
+      "group": "io/8/platform/16/64",
+      "runs": 10,
+      "medianBatchSeconds": 0.11949533561111111,
+      "medianOperationsPerSecond": 535.5873651296899,
+      "medianRunP95Seconds": 0.117464104,
+      "publishable": false
+    },
+    {
+      "group": "report/25/platform/16/1000",
+      "runs": 10,
+      "medianBatchSeconds": 2.0275532233494834e-06,
+      "medianOperationsPerSecond": 493219.2779347357,
+      "medianRunP95Seconds": 2.0834999999999996e-06,
+      "publishable": false
+    },
+    {
+      "group": "report/25/platform/16/10000",
+      "runs": 10,
+      "medianBatchSeconds": 1.9122904538654838e-05,
+      "medianOperationsPerSecond": 52293.31153556155,
+      "medianRunP95Seconds": 2.04795e-05,
+      "publishable": false
+    },
+    {
+      "group": "report/25/platform/16/100000",
+      "runs": 10,
+      "medianBatchSeconds": 0.00018854582496429168,
+      "medianOperationsPerSecond": 5303.756391349079,
+      "medianRunP95Seconds": 0.000197042,
+      "publishable": false
+    },
+    {
+      "group": "report/25/platform/16/1000000",
+      "runs": 10,
+      "medianBatchSeconds": 0.0018855702285914791,
+      "medianOperationsPerSecond": 530.344174980769,
+      "medianRunP95Seconds": 0.001940188,
+      "publishable": false
+    },
+    {
+      "group": "report/25/platform/16/5000",
+      "runs": 10,
+      "medianBatchSeconds": 9.58237706504789e-06,
+      "medianOperationsPerSecond": 104358.30998600635,
+      "medianRunP95Seconds": 1.0146e-05,
+      "publishable": false
+    },
+    {
+      "group": "report/25/platform/16/50000",
+      "runs": 10,
+      "medianBatchSeconds": 9.45539591959532e-05,
+      "medianOperationsPerSecond": 10576.019738376412,
+      "medianRunP95Seconds": 9.98335e-05,
+      "publishable": false
+    },
+    {
+      "group": "report/25/platform/16/500000",
+      "runs": 10,
+      "medianBatchSeconds": 0.0009453330851273195,
+      "medianOperationsPerSecond": 1057.8386641972963,
+      "medianRunP95Seconds": 0.0009775629999999999,
+      "publishable": false
+    },
+    {
+      "group": "report/8/platform/16/1000",
+      "runs": 10,
+      "medianBatchSeconds": 2.035105909568195e-06,
+      "medianOperationsPerSecond": 491391.59714840294,
+      "medianRunP95Seconds": 2.042e-06,
+      "publishable": false
+    },
+    {
+      "group": "report/8/platform/16/10000",
+      "runs": 10,
+      "medianBatchSeconds": 1.9107645440335945e-05,
+      "medianOperationsPerSecond": 52335.072627234804,
+      "medianRunP95Seconds": 2.04995e-05,
+      "publishable": false
+    },
+    {
+      "group": "report/8/platform/16/100000",
+      "runs": 10,
+      "medianBatchSeconds": 0.00018918973733711284,
+      "medianOperationsPerSecond": 5285.7105858014,
+      "medianRunP95Seconds": 0.00019795849999999999,
+      "publishable": false
+    },
+    {
+      "group": "report/8/platform/16/1000000",
+      "runs": 10,
+      "medianBatchSeconds": 0.0018911585538752365,
+      "medianOperationsPerSecond": 528.7764810923014,
+      "medianRunP95Seconds": 0.001948063,
+      "publishable": false
+    },
+    {
+      "group": "report/8/platform/16/5000",
+      "runs": 10,
+      "medianBatchSeconds": 9.633475245145484e-06,
+      "medianOperationsPerSecond": 103804.73695582853,
+      "medianRunP95Seconds": 1.0041499999999999e-05,
+      "publishable": false
+    },
+    {
+      "group": "report/8/platform/16/50000",
+      "runs": 10,
+      "medianBatchSeconds": 9.480003012521271e-05,
+      "medianOperationsPerSecond": 10548.554140232878,
+      "medianRunP95Seconds": 9.99585e-05,
+      "publishable": false
+    },
+    {
+      "group": "report/8/platform/16/500000",
+      "runs": 10,
+      "medianBatchSeconds": 0.0009522379212541344,
+      "medianOperationsPerSecond": 1050.1583627206946,
+      "medianRunP95Seconds": 0.0009879785,
+      "publishable": false
+    }
+  ]
+}

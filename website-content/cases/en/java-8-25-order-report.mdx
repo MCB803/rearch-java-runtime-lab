@@ -1,0 +1,176 @@
+---
+{
+  "translationKey": "java8-25-synthetic-orders",
+  "title": "Java 8 → 25: one order report, two runtimes",
+  "summary": "The same bytecode reports over 1 million in-memory orders in 1.891 ms → 1.886 ms. A synthetic runtime study across seven data sizes and 440 real JVM runs.",
+  "kind": "lab",
+  "status": "completed",
+  "date": "2026-10-14",
+  "service": "app-modernization",
+  "technologies": [
+    "java"
+  ],
+  "segments": [
+    "kobi",
+    "kurumsal",
+    "partner"
+  ],
+  "from": [
+    "Corretto 8u432"
+  ],
+  "to": [
+    "Corretto 25.0.3"
+  ],
+  "repoUrl": "https://github.com/MCB803/rearch-java-runtime-lab",
+  "rawDataUrl": "https://rearchlabs.com/labs/java8-25-2026-10-14/raw.csv",
+  "featured": true,
+  "draft": false,
+  "media": {
+    "before": "../../../assets/labs/java8-25/report-8-en.png",
+    "after": "../../../assets/labs/java8-25/report-25-en.png"
+  },
+  "metrics": [
+    {
+      "id": "million-order-report",
+      "label": "In-memory report over 1 million orders",
+      "unit": "ms",
+      "direction": "lower_is_better",
+      "before": 1.8911585538752365,
+      "after": 1.885570228591479,
+      "runs": 10,
+      "aggregation": "median",
+      "method": "java8-25-synthetic-order-report",
+      "primary": true,
+      "pillars": [
+        "performance"
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "report-record-count",
+      "title": "Report duration by order count",
+      "xLabel": "Synthetic order records",
+      "yUnit": "µs",
+      "x": [
+        1000,
+        5000,
+        10000,
+        50000,
+        100000,
+        500000,
+        1000000
+      ],
+      "before": [
+        2.035105909568195,
+        9.633475245145483,
+        19.107645440335947,
+        94.80003012521271,
+        189.18973733711283,
+        952.2379212541343,
+        1891.1585538752365
+      ],
+      "after": [
+        2.0275532233494835,
+        9.58237706504789,
+        19.12290453865484,
+        94.5539591959532,
+        188.54582496429168,
+        945.3330851273195,
+        1885.570228591479
+      ],
+      "beforeFailures": []
+    }
+  ],
+  "environment": {
+    "summary": "Apple M3 · 8 cores · 24 GiB RAM · macOS Darwin 25.5.0 · native arm64. Shared developer workstation with a browser and the website development server running.",
+    "data": "1,000–1,000,000 deterministic orders; no customer data. Integer amounts, cancellation filter and 84 region/month buckets; equal outputs checked by checksum.",
+    "tools": [
+      "Amazon Corretto 1.8.0_432-b06",
+      "Amazon Corretto 25.0.3+9-LTS",
+      "Java 8 javac → same bytecode",
+      "Python standard library oracle",
+      "-Xms256m -Xmx256m -XX:+UseG1GC"
+    ],
+    "repetitions": "44 arms × 10 fresh JVMs = 440 runs. Each JVM: 5 s warmup, at least 1 s measurement; fixed randomized order; every repetition included."
+  },
+  "process": [
+    {
+      "title": "Experiment scope",
+      "ai": "Designed synthetic report, I/O and CPU controls that produce the same output.",
+      "human": "The site owner requested common Java migration examples and publication of actual measurements.",
+      "hours": null
+    },
+    {
+      "title": "Execution and verification",
+      "ai": "Implemented the harness, ran actual JVM processes, checked independent output checksums and file integrity, and retained the failed initial attempt separately.",
+      "human": "Local full measurement was authorised. No separate human time log or human code-review record was kept for this step.",
+      "hours": null
+    },
+    {
+      "title": "Open evidence package",
+      "ai": "Prepared all measurements, sources, control arms and bilingual findings without changing raw values.",
+      "human": "The site owner requested launch. Automation wall time was not reported as human working hours.",
+      "hours": null
+    }
+  ]
+}
+---
+
+## What does the report do?
+
+It filters cancelled orders and groups integer amounts by region and month. Data is generated once; the timed section scans, aggregates and checks the result. Database access, networking and screen rendering are outside this report duration.
+
+The source was compiled once with Java 8. The same bytecode, data and heap/GC flags ran on both installed runtimes. The application was written for this synthetic study; it is not presented as a historical customer migration. The images above are screenshots of a report viewer generated from the actual measurements.
+
+## What changed at one million records?
+
+At the preselected primary point, median duration moved from **1.891 ms to 1.886 ms**: **0.3% shorter** in these conditions. Each value is the median of per-JVM average report durations across ten fresh JVMs. Run ranges were 1.875–1.91 ms for Java 8 and 1.848–1.92 ms for Java 25. All seven data points are retained in the chart and raw file; slow repetitions were not removed.
+
+Read this small median difference alongside the overlapping run ranges. Changing only the runtime did not show a material speed gain for this task; a 0.3% difference is not a migration case on its own. No statistical-significance claim or confidence interval is made.
+
+For your product, the next step is to compare your own daily report or waiting operation with the same output checks. That makes the actual task, rather than a version number, the basis for a migration decision.
+
+## Waiting for I/O and computing are different workloads
+
+Two controls accompany the report: jobs waiting for a reply over a real loopback TCP connection, and jobs running a 20,000-step numerical calculation. Each batch submits 16, 64 or 256 jobs together. These counts do not represent simultaneous human users.
+
+Java 25 platform and virtual threads were measured with budgets of both 16 and 128 permits. This separates a larger work budget from executor choice. The dependency has 32 workers and a configured 20 ms wait per request; more client jobs do not remove that dependency limit.
+
+The tables show median **batch** duration across ten JVMs, not per-job latency. Per-job p95 including queue time is retained separately in the raw data and distribution file.
+
+### TCP waiting control
+
+| Runtime / executor / permits | 16 jobs · ms | 64 jobs · ms | 256 jobs · ms |
+| --- | ---: | ---: | ---: |
+| Java 8 / platform / 16 | 31.602 | 119.495 | 454.72 |
+| Java 25 / platform / 16 | 31.098 | 114.674 | 438.213 |
+| Java 25 / virtual / 16 | 30.892 | 115.55 | 430.669 |
+| Java 25 / platform / 128 | 31.256 | 60.785 | 220.083 |
+| Java 25 / virtual / 128 | 31.106 | 60.939 | 221.106 |
+
+### CPU control
+
+| Runtime / executor / permits | 16 jobs · ms | 64 jobs · ms | 256 jobs · ms |
+| --- | ---: | ---: | ---: |
+| Java 8 / platform / 16 | 0.251 | 0.69 | 2.5 |
+| Java 25 / platform / 16 | 0.254 | 0.731 | 2.619 |
+| Java 25 / virtual / 16 | 0.232 | 0.652 | 2.497 |
+| Java 25 / platform / 128 | 0.258 | 0.696 | 2.587 |
+| Java 25 / virtual / 128 | 0.235 | 0.684 | 2.477 |
+
+## Limits of this environment
+
+Measurement used one shared Apple M3 workstation. A browser and the development server remained open; other agents were asked to avoid heavy builds and tests. One-minute system load ranged from 2.56 to 21.14; before/after values for every run are in the raw data. There was no CPU quota or separate load generator; background OS and browser activity was not separately isolated. A fixed five-second warmup does not establish full JIT steady state.
+
+The exact builds were Corretto **8u432-b06** and **25.0.3+9-LTS**. The Java 8 build is not described as current; major-version and patch differences were not isolated. Findings belong to these builds and tasks. Price, licensing, RSS/peak memory, GC pauses and vulnerabilities were not measured, so no cost or security percentage is derived.
+
+The initial full attempt stopped at process three when ephemeral TCP ports were exhausted. All records were retained. The controlled dependency delay changed from 2 ms to 20 ms and each JVM received a fresh dependency port; the entire 440-run matrix then restarted. The two completed measurements from that attempt are excluded from this dataset.
+
+The full run took 48.7 minutes of wall-clock time. That is not human work time. Human hours were not tracked, so the process section makes no numerical effort claim.
+
+## Sources and reproduction
+
+[440 raw measurements — CSV](https://rearchlabs.com/labs/java8-25-2026-10-14/raw.csv), [all distributions](https://rearchlabs.com/labs/java8-25-2026-10-14/distributions.json), [environment and run manifest](https://rearchlabs.com/labs/java8-25-2026-10-14/manifest.json), [publication review](https://rearchlabs.com/labs/java8-25-2026-10-14/publication-review.json) and [source + all logs — ZIP](https://rearchlabs.com/labs/java8-25-2026-10-14/rearch-java-runtime-lab-2026-10-14.zip) are public. The raw `publishable: false` flags mean the runner does not automatically approve publication. The flags remain unchanged; a separate publication review documents this study's scope.
+
+Reproduce the same matrix with the commands in the [source repository](https://github.com/MCB803/rearch-java-runtime-lab). [Oracle's virtual thread documentation](https://docs.oracle.com/en/java/javase/25/core/virtual-threads.html) explains the distinction between waiting I/O and CPU work. [Amazon Corretto 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/what-is-corretto-8.html) and [Corretto 25](https://docs.aws.amazon.com/corretto/latest/corretto-25-ug/what-is-corretto-25.html) document the distribution's support model, not the currency of this installed old build. The harness does not use [JMH](https://github.com/openjdk/jmh).

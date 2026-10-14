@@ -1,0 +1,47 @@
+{
+  "case": "tr/java-8-25-siparis-raporu",
+  "dataScale": [
+    {
+      "taskId": "order-report",
+      "taskLabel": {
+        "tr": "Bellekteki siparişleri bölge ve aya göre topla",
+        "en": "Aggregate in-memory orders by region and month"
+      },
+      "sizes": [
+        1000,
+        5000,
+        10000,
+        50000,
+        100000,
+        500000,
+        1000000
+      ],
+      "beforeSeconds": [
+        2.035105909568195e-06,
+        9.633475245145484e-06,
+        1.9107645440335945e-05,
+        9.480003012521271e-05,
+        0.00018918973733711284,
+        0.0009522379212541344,
+        0.0018911585538752365
+      ],
+      "afterSeconds": [
+        2.0275532233494834e-06,
+        9.58237706504789e-06,
+        1.9122904538654838e-05,
+        9.45539591959532e-05,
+        0.00018854582496429168,
+        0.0009453330851273195,
+        0.0018855702285914791
+      ],
+      "beforeFailures": [],
+      "why": {
+        "tr": "İş kuralı, veri ve bytecode aynı; iki kurulu runtime karşılaştırılıyor. JIT, GC uygulaması ve patch düzeyleri birlikte değiştiğinden farkı tek bir Java özelliğine bağlamıyoruz. Ağ veya veritabanı süresi dahil değil. Her nokta on ayrı JVM koşusunun medyanı; bunlar gerçek ürününüzün yanıt süreleri değildir.",
+        "en": "Business logic, data and bytecode are identical; the two installed runtimes differ. JIT, GC implementation and patch level change together, so the difference is not attributed to one Java feature. Networking and database time are excluded. Each point is the median of ten fresh JVMs, not a response-time estimate for your product."
+      },
+      "runs": 10,
+      "aggregation": "median",
+      "method": "java8-25-synthetic-order-report"
+    }
+  ]
+}
