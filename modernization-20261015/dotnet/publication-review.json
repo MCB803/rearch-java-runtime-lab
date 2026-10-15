@@ -1,0 +1,12 @@
+{
+  "status": "accepted-synthetic-matching-scope",
+  "completedRuns": 90,
+  "completedWarmups": 18,
+  "testsPassed": 7,
+  "allOutputHashesVerified": true,
+  "sourceAndDataHashesVerified": true,
+  "runtime": ".NET 10.0.13",
+  "scope": "Same .NET runtime; in-memory matching stage including index construction, not complete CSV/network/database import and not .NET Framework-to10 performance",
+  "rawData": "full/raw.jsonl",
+  "manifest": "full/manifest.json"
+}

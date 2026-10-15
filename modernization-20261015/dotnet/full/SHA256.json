@@ -1,0 +1,17 @@
+{
+  "logs/build.txt": "0ef23f78bd04f5aa58c46bd196c7490a094433220a6753efd607515a52d9ff50",
+  "logs/process-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/process-stdout.jsonl": "5d764a0792c89d7ed6650c3ee1efce8f55f3d55514aacb7a0cd11de118ddf91e",
+  "logs/runtime.txt": "fcdd4665546a59687af4baf98cbfcf4a642bef6fec8b4bb9212a7f9556e4fbb2",
+  "manifest.json": "999bb679ed1e59b7bd7fcce56e68e12507452a7176bfb49f218e87447d9413b7",
+  "plan.json": "fa7e24567770f912de9a26c0669e7f562eadd3422915e3c12999c155f197a880",
+  "raw.csv": "5139e14a62985bc8727fb85138406d6c5fdf66c39b2bfb830a3d777cccc0d633",
+  "raw.jsonl": "6cda5d813dc87922a663391389d71da0f02b9d5182a63533d019b21b2b43b5d1",
+  "sources/CatalogBench.csproj": "cbda77be076f6ff67d1a510c950892ab127591d8dec1e78eb4f9a23d48b41661",
+  "sources/Program.cs": "ff6edcc7414d2b979375d1bf1d6e6ce2255d0ce120ef109b7d6fc821dc2435a9",
+  "sources/README.md": "f557a3ed47960feb8428fb5dbfdc6c0846e808d4d21e3378986f8f06441a692a",
+  "sources/run.py": "bcbd5a7e988bfc0740ce2badc34433c3fc763b54a8aba0b90fbc9272c9e8b5c7",
+  "sources/test_harness.py": "b89d1a73f43d8c388a4f64571e0fe939bb4990fefc6cb81f70395948ad7504b1",
+  "sources/test_publication.py": "be56b205f6be5f823e5fd27c5dfe8ae99063a0d495a499bfab0f894297211916",
+  "summary.json": "75bf6ea13970debfdf40199ce49977d7b30a8627f4db36b5e424649fd92d1640"
+}

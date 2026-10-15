@@ -1,0 +1,244 @@
+{
+  "kind": "security",
+  "synthetic": true,
+  "scope": "owned-in-memory-lab",
+  "tenant": 1,
+  "fixtureRows": 12,
+  "cases": [
+    {
+      "id": "normal",
+      "input": "T1-001",
+      "expected": [
+        1
+      ],
+      "adversarial": false,
+      "arms": {
+        "legacy-concatenation": {
+          "rowIds": [
+            1
+          ],
+          "rowsReturned": 1,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        },
+        "prepared-only-control": {
+          "rowIds": [
+            1
+          ],
+          "rowsReturned": 1,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        },
+        "prepared-and-scoped": {
+          "rowIds": [
+            1
+          ],
+          "rowsReturned": 1,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "id": "missing",
+      "input": "does-not-exist",
+      "expected": [],
+      "adversarial": false,
+      "arms": {
+        "legacy-concatenation": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        },
+        "prepared-only-control": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        },
+        "prepared-and-scoped": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "id": "apostrophe",
+      "input": "T1-O'Brian",
+      "expected": [
+        6
+      ],
+      "adversarial": false,
+      "arms": {
+        "legacy-concatenation": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": true,
+          "passed": false
+        },
+        "prepared-only-control": {
+          "rowIds": [
+            6
+          ],
+          "rowsReturned": 1,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        },
+        "prepared-and-scoped": {
+          "rowIds": [
+            6
+          ],
+          "rowsReturned": 1,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "id": "boolean-injection",
+      "input": "' OR 1=1 --",
+      "expected": [],
+      "adversarial": true,
+      "arms": {
+        "legacy-concatenation": {
+          "rowIds": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "rowsReturned": 12,
+          "otherTenantRows": 6,
+          "queryError": false,
+          "passed": false
+        },
+        "prepared-only-control": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        },
+        "prepared-and-scoped": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "id": "tenant-injection",
+      "input": "' OR tenant_id=2 --",
+      "expected": [],
+      "adversarial": true,
+      "arms": {
+        "legacy-concatenation": {
+          "rowIds": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "rowsReturned": 6,
+          "otherTenantRows": 6,
+          "queryError": false,
+          "passed": false
+        },
+        "prepared-only-control": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        },
+        "prepared-and-scoped": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        }
+      }
+    },
+    {
+      "id": "direct-cross-tenant",
+      "input": "T2-001",
+      "expected": [],
+      "adversarial": true,
+      "arms": {
+        "legacy-concatenation": {
+          "rowIds": [
+            7
+          ],
+          "rowsReturned": 1,
+          "otherTenantRows": 1,
+          "queryError": false,
+          "passed": false
+        },
+        "prepared-only-control": {
+          "rowIds": [
+            7
+          ],
+          "rowsReturned": 1,
+          "otherTenantRows": 1,
+          "queryError": false,
+          "passed": false
+        },
+        "prepared-and-scoped": {
+          "rowIds": [],
+          "rowsReturned": 0,
+          "otherTenantRows": 0,
+          "queryError": false,
+          "passed": true
+        }
+      }
+    }
+  ],
+  "summary": {
+    "legacy-concatenation": {
+      "passed": 2,
+      "total": 6,
+      "adversarialPassed": 0,
+      "adversarialTotal": 3,
+      "otherTenantRowsAcrossCases": 13
+    },
+    "prepared-only-control": {
+      "passed": 5,
+      "total": 6,
+      "adversarialPassed": 2,
+      "adversarialTotal": 3,
+      "otherTenantRowsAcrossCases": 1
+    },
+    "prepared-and-scoped": {
+      "passed": 6,
+      "total": 6,
+      "adversarialPassed": 3,
+      "adversarialTotal": 3,
+      "otherTenantRowsAcrossCases": 0
+    }
+  }
+}

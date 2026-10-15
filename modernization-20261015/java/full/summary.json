@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-10-15T09:25:40.116814+00:00",
+  "kind": "synthetic-measured-lab",
+  "experiments": [
+    {
+      "id": "java-order-fanout",
+      "pointUnit": "orders",
+      "serviceCapacity": 64,
+      "points": [
+        {
+          "size": 16,
+          "arms": [
+            {
+              "id": "legacy-java8",
+              "runs": 10,
+              "medianMs": 182.87275,
+              "minMs": 173.653917,
+              "maxMs": 197.677125,
+              "p95Ms": 182.836271,
+              "medianCpuMs": 25.939999999999998,
+              "peakPlatformThreads": 12.0,
+              "operations": 16,
+              "dependencyCalls": 48,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "runtime-java25",
+              "runs": 10,
+              "medianMs": 184.77662550000002,
+              "minMs": 167.06175,
+              "maxMs": 203.370458,
+              "p95Ms": 184.744375,
+              "medianCpuMs": 18.0205,
+              "peakPlatformThreads": 14.0,
+              "operations": 16,
+              "dependencyCalls": 48,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-platform-java25",
+              "runs": 10,
+              "medianMs": 31.5375415,
+              "minMs": 28.634666,
+              "maxMs": 55.49275,
+              "p95Ms": 31.524729,
+              "medianCpuMs": 11.908999999999999,
+              "peakPlatformThreads": 70.0,
+              "operations": 16,
+              "dependencyCalls": 48,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-virtual-java25",
+              "runs": 10,
+              "medianMs": 31.610125,
+              "minMs": 27.589875,
+              "maxMs": 44.188584,
+              "p95Ms": 31.596104500000003,
+              "medianCpuMs": 10.142,
+              "peakPlatformThreads": 18.0,
+              "operations": 16,
+              "dependencyCalls": 48,
+              "allOutputsVerified": true
+            }
+          ]
+        },
+        {
+          "size": 64,
+          "arms": [
+            {
+              "id": "legacy-java8",
+              "runs": 10,
+              "medianMs": 729.5398749999999,
+              "minMs": 709.428459,
+              "maxMs": 785.30725,
+              "p95Ms": 729.1905835,
+              "medianCpuMs": 52.623999999999995,
+              "peakPlatformThreads": 12.0,
+              "operations": 64,
+              "dependencyCalls": 192,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "runtime-java25",
+              "runs": 10,
+              "medianMs": 725.4427290000001,
+              "minMs": 693.619208,
+              "maxMs": 746.2405,
+              "p95Ms": 725.3726875,
+              "medianCpuMs": 65.806,
+              "peakPlatformThreads": 14.0,
+              "operations": 64,
+              "dependencyCalls": 192,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-platform-java25",
+              "runs": 10,
+              "medianMs": 97.515687,
+              "minMs": 90.766208,
+              "maxMs": 126.343208,
+              "p95Ms": 97.38229100000001,
+              "medianCpuMs": 29.633499999999998,
+              "peakPlatformThreads": 70.0,
+              "operations": 64,
+              "dependencyCalls": 192,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-virtual-java25",
+              "runs": 10,
+              "medianMs": 97.451292,
+              "minMs": 86.802333,
+              "maxMs": 101.854,
+              "p95Ms": 97.32120850000001,
+              "medianCpuMs": 42.585499999999996,
+              "peakPlatformThreads": 18.0,
+              "operations": 64,
+              "dependencyCalls": 192,
+              "allOutputsVerified": true
+            }
+          ]
+        },
+        {
+          "size": 256,
+          "arms": [
+            {
+              "id": "legacy-java8",
+              "runs": 10,
+              "medianMs": 2949.734833,
+              "minMs": 2906.580875,
+              "maxMs": 3086.325792,
+              "p95Ms": 2848.0803125,
+              "medianCpuMs": 259.2065,
+              "peakPlatformThreads": 12.0,
+              "operations": 256,
+              "dependencyCalls": 768,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "runtime-java25",
+              "runs": 10,
+              "medianMs": 2930.1715415,
+              "minMs": 2849.258583,
+              "maxMs": 3016.991833,
+              "p95Ms": 2841.425479,
+              "medianCpuMs": 256.98900000000003,
+              "peakPlatformThreads": 14.0,
+              "operations": 256,
+              "dependencyCalls": 768,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-platform-java25",
+              "runs": 10,
+              "medianMs": 399.2980625,
+              "minMs": 376.524584,
+              "maxMs": 433.247625,
+              "p95Ms": 398.3559165,
+              "medianCpuMs": 108.11449999999999,
+              "peakPlatformThreads": 70.0,
+              "operations": 256,
+              "dependencyCalls": 768,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-virtual-java25",
+              "runs": 10,
+              "medianMs": 380.90956300000005,
+              "minMs": 332.544042,
+              "maxMs": 398.511833,
+              "p95Ms": 380.65312500000005,
+              "medianCpuMs": 125.21,
+              "peakPlatformThreads": 18.0,
+              "operations": 256,
+              "dependencyCalls": 768,
+              "allOutputsVerified": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "java-dependency-bottleneck",
+      "pointUnit": "orders",
+      "serviceCapacity": 8,
+      "points": [
+        {
+          "size": 256,
+          "arms": [
+            {
+              "id": "legacy-java8",
+              "runs": 10,
+              "medianMs": 2935.9534795,
+              "minMs": 2831.806417,
+              "maxMs": 3053.196292,
+              "p95Ms": 2839.402834,
+              "medianCpuMs": 252.33350000000002,
+              "peakPlatformThreads": 12.0,
+              "operations": 256,
+              "dependencyCalls": 768,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-virtual-java25",
+              "runs": 10,
+              "medianMs": 2777.2514585,
+              "minMs": 2735.817458,
+              "maxMs": 2803.408709,
+              "p95Ms": 2666.8319585,
+              "medianCpuMs": 398.06600000000003,
+              "peakPlatformThreads": 18.0,
+              "operations": 256,
+              "dependencyCalls": 768,
+              "allOutputsVerified": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

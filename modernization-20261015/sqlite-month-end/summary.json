@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "id": "sqlite-month-end",
+  "measuredAt": "2026-10-15T09:41:32+00:00",
+  "completedAt": "2026-10-15T10:00:00+00:00",
+  "environment": {
+    "kind": "environment",
+    "protocol": "sqlite-month-end-v1",
+    "startedAt": "2026-10-15T09:41:32+00:00",
+    "sizes": [
+      100000,
+      1000000,
+      5000000
+    ],
+    "customers": 500,
+    "runs": 10,
+    "warmups": 2,
+    "phpVersion": "8.4.26",
+    "sqliteVersion": "3.46.1",
+    "architecture": "aarch64",
+    "opcacheCli": "0",
+    "memoryLimit": "768M",
+    "query": "SELECT c.id, (SELECT COALESCE(SUM(o.total_cents),0) FROM orders o WHERE o.customer_id=c.id AND o.status='open') FROM customers c ORDER BY c.id",
+    "groupedQuery": "SELECT c.id, COALESCE(t.total,0) FROM customers c LEFT JOIN (SELECT customer_id,SUM(total_cents) AS total FROM orders WHERE status='open' GROUP BY customer_id) t ON t.customer_id=c.id ORDER BY c.id"
+  },
+  "points": [
+    {
+      "size": 100000,
+      "arms": [
+        {
+          "id": "sql-unindexed-correlated",
+          "runs": 10,
+          "seconds": {
+            "median": 1.434972584,
+            "min": 1.417138376,
+            "max": 1.5249875,
+            "p95NearestRank": 1.5249875,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 1.4347815000000002,
+            "min": 1.416968,
+            "max": 1.524731,
+            "p95NearestRank": 1.524731,
+            "n": 10
+          }
+        },
+        {
+          "id": "sql-indexed-correlated",
+          "runs": 10,
+          "seconds": {
+            "median": 0.0038329375,
+            "min": 0.003716042,
+            "max": 0.004382667,
+            "p95NearestRank": 0.004382667,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0038345000000000002,
+            "min": 0.003716,
+            "max": 0.004386,
+            "p95NearestRank": 0.004386,
+            "n": 10
+          }
+        },
+        {
+          "id": "sql-indexed-grouped-control",
+          "runs": 10,
+          "seconds": {
+            "median": 0.005507375,
+            "min": 0.0052945,
+            "max": 0.005738125,
+            "p95NearestRank": 0.005738125,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.005509,
+            "min": 0.005295,
+            "max": 0.005741,
+            "p95NearestRank": 0.005741,
+            "n": 10
+          }
+        }
+      ],
+      "indexBuildSeconds": 0.040340416,
+      "indexExtraBytes": 1978368,
+      "tableBytes": 2002944,
+      "withIndexBytes": 3981312,
+      "loadSeconds": 0.1405835,
+      "outputSha256": "32a78b3cc406ea1ad758b97d24900729e6cf38085ec334634c1a5727d5ad2853"
+    },
+    {
+      "size": 1000000,
+      "arms": [
+        {
+          "id": "sql-unindexed-correlated",
+          "runs": 10,
+          "seconds": {
+            "median": 14.751158007,
+            "min": 14.659323507,
+            "max": 15.320885341,
+            "p95NearestRank": 15.320885341,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 14.748546,
+            "min": 14.657113,
+            "max": 15.296171,
+            "p95NearestRank": 15.296171,
+            "n": 10
+          }
+        },
+        {
+          "id": "sql-indexed-correlated",
+          "runs": 10,
+          "seconds": {
+            "median": 0.036498437499999994,
+            "min": 0.035217042,
+            "max": 0.042936167,
+            "p95NearestRank": 0.042936167,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.036504,
+            "min": 0.035222,
+            "max": 0.042929,
+            "p95NearestRank": 0.042929,
+            "n": 10
+          }
+        },
+        {
+          "id": "sql-indexed-grouped-control",
+          "runs": 10,
+          "seconds": {
+            "median": 0.052951645500000005,
+            "min": 0.050649583,
+            "max": 0.059153125,
+            "p95NearestRank": 0.059153125,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0529405,
+            "min": 0.050653,
+            "max": 0.059145,
+            "p95NearestRank": 0.059145,
+            "n": 10
+          }
+        }
+      ],
+      "indexBuildSeconds": 0.50863975,
+      "indexExtraBytes": 20013056,
+      "tableBytes": 20029440,
+      "withIndexBytes": 40042496,
+      "loadSeconds": 1.407695251,
+      "outputSha256": "a689da5b456236855cc3c65f23cee08bc5120ef6b8230a921ec521cb5762eb86"
+    },
+    {
+      "size": 5000000,
+      "arms": [
+        {
+          "id": "sql-unindexed-correlated",
+          "runs": 10,
+          "seconds": {
+            "median": 73.10621019999999,
+            "min": 72.725780533,
+            "max": 76.262241619,
+            "p95NearestRank": 76.262241619,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 73.09576799999999,
+            "min": 72.716904,
+            "max": 76.248806,
+            "p95NearestRank": 76.248806,
+            "n": 10
+          }
+        },
+        {
+          "id": "sql-indexed-correlated",
+          "runs": 10,
+          "seconds": {
+            "median": 0.175501979,
+            "min": 0.169297584,
+            "max": 0.207340167,
+            "p95NearestRank": 0.207340167,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.1754725,
+            "min": 0.169301,
+            "max": 0.207318,
+            "p95NearestRank": 0.207318,
+            "n": 10
+          }
+        },
+        {
+          "id": "sql-indexed-grouped-control",
+          "runs": 10,
+          "seconds": {
+            "median": 0.25465289550000003,
+            "min": 0.246970292,
+            "max": 0.280235,
+            "p95NearestRank": 0.280235,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.254617,
+            "min": 0.246946,
+            "max": 0.280228,
+            "p95NearestRank": 0.280228,
+            "n": 10
+          }
+        }
+      ],
+      "indexBuildSeconds": 4.085633418,
+      "indexExtraBytes": 100130816,
+      "tableBytes": 103153664,
+      "withIndexBytes": 203284480,
+      "loadSeconds": 7.745877628,
+      "outputSha256": "a68984e5ed0f0148ea60aad8410a4948a45e14e19bae331fbf944e08ba1d8a39"
+    }
+  ],
+  "runs": 10,
+  "aggregation": "median",
+  "baselineId": "sql-unindexed-correlated",
+  "modernId": "sql-indexed-correlated",
+  "controlId": "sql-indexed-grouped-control",
+  "measuredSamples": 90,
+  "warmupSamples": 18,
+  "allOutputsEquivalent": true
+}

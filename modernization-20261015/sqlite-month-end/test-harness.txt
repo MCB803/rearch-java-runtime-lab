@@ -1,0 +1,1 @@
+3 streaming fixture assertions passed

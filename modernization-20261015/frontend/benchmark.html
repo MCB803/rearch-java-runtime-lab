@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ReArch Labs · invoice list rendering benchmark</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f9f9f7;color:#101110;font:14px system-ui,sans-serif}main{max-width:1000px;margin:24px auto;padding:0 20px}h1{font-size:24px}p{line-height:1.6}button{padding:12px 18px;border:1px solid #151515;background:#151515;color:white;cursor:pointer}button:disabled{opacity:.5;cursor:default}#viewport{height:560px;overflow-y:scroll;border:1px solid #bbb;position:relative;background:white;contain:strict}#rows{min-width:600px}.invoice{height:40px;display:grid;grid-template-columns:110px 1fr 130px 150px;gap:12px;padding:9px 14px;border-bottom:1px solid #e5e5e0;white-space:nowrap;font-variant-numeric:tabular-nums}.invoice:nth-child(even){background:#f3f5f4}.invoice span:last-child{text-align:right}#status{min-height:26px;font-weight:600}pre{white-space:pre-wrap;word-break:break-word;font-size:11px}#progress{font-family:monospace}details{margin-top:20px}#mode{padding:12px 0;font-family:monospace}
+</style>
+<main><h1>Invoice list rendering · same filtered records</h1><p>Three dataset sizes, two implementations. Two warmups and ten recorded runs per implementation and size. This measures filtering, DOM update, layout and the next rendering opportunity. Synthetic invoices only.</p><button id="run" type="button">Run recorded benchmark</button><p id="status" role="status">Ready. Keep this tab visible while running.</p><p id="progress">Not started</p><div id="mode">No workload selected</div><div id="viewport" aria-label="Invoice list"><div id="rows"></div></div><details open><summary>Recorded output</summary><pre id="output">No results yet.</pre></details></main>
+<script type="module">
+const SIZES=[1000,10000,50000], WARMUPS=2, RUNS=10, ROW_HEIGHT=40, WINDOW_ROWS=40;
+const viewport=document.getElementById('viewport'), rows=document.getElementById('rows'), status=document.getElementById('status'), progress=document.getElementById('progress'), output=document.getElementById('output'), button=document.getElementById('run'), mode=document.getElementById('mode');
+let selected=[], implementation='legacy', renderPending=false, programmatic=false;
+function dataset(size){return Array.from({length:size},(_,i)=>({id:i+1,customer:`Customer ${String((i*17)%10000).padStart(4,'0')}`,status:i%3===0?'paid':'overdue',cents:10000+(i*3571)%900000}));}
+function checksum(records){let sum=0n;for(const invoice of records)sum+=BigInt(invoice.id)*BigInt(invoice.cents);return sum.toString();}
+function escape(value){return value.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));}
+function markup(invoice){return `<div class="invoice" data-id="${invoice.id}"><span>INV-${String(invoice.id).padStart(6,'0')}</span><span>${implementation==='virtualized'?escape(invoice.customer):invoice.customer}</span><span>${invoice.status}</span><span>${(invoice.cents/100).toFixed(2)} TRY</span></div>`;}
+function windowStart(){return Math.max(0,Math.min(Math.floor(viewport.scrollTop/ROW_HEIGHT),Math.max(0,selected.length-WINDOW_ROWS)));}
+function render(){if(implementation==='legacy'){rows.innerHTML=selected.map(markup).join('');return;}const start=windowStart(),end=Math.min(selected.length,start+WINDOW_ROWS);rows.innerHTML=`<div style="height:${start*ROW_HEIGHT}px" aria-hidden="true"></div>${selected.slice(start,end).map(markup).join('')}<div style="height:${(selected.length-end)*ROW_HEIGHT}px" aria-hidden="true"></div>`;}
+viewport.addEventListener('scroll',()=>{if(programmatic||implementation!=='virtualized'||renderPending)return;renderPending=true;requestAnimationFrame(()=>{renderPending=false;render();});});
+const frame=()=>new Promise(resolve=>requestAnimationFrame(resolve));
+async function painted(){void viewport.offsetHeight;await frame();await frame();}
+function visibleIds(){const indices=new Map(selected.map((item,index)=>[item.id,index]));const first=Math.floor(viewport.scrollTop/ROW_HEIGHT),count=Math.ceil(viewport.clientHeight/ROW_HEIGHT);return Array.from(rows.querySelectorAll('.invoice')).filter(node=>{const index=indices.get(Number(node.dataset.id));return index>=first&&index<Math.min(selected.length,first+count);}).map(node=>Number(node.dataset.id));}
+function same(a,b){return a.length===b.length&&a.every((value,index)=>value===b[index]);}
+async function verify(){
+ const expectedTop=selected.slice(0,Math.ceil(viewport.clientHeight/ROW_HEIGHT)).map(item=>item.id);
+ const top=visibleIds();
+ programmatic=true;viewport.scrollTop=viewport.scrollHeight-viewport.clientHeight;if(implementation==='virtualized')render();await painted();
+ const start=Math.floor(viewport.scrollTop/ROW_HEIGHT), expectedBottom=selected.slice(start,start+Math.ceil(viewport.clientHeight/ROW_HEIGHT)).map(item=>item.id),bottom=visibleIds();
+ const checks={top:same(top,expectedTop),bottom:same(bottom,expectedBottom),scrollHeight:Math.abs(viewport.scrollHeight-selected.length*ROW_HEIGHT)<=1,topIds:top,bottomIds:bottom};
+ viewport.scrollTop=0;if(implementation==='virtualized')render();await painted();programmatic=false;
+ if(!checks.top||!checks.bottom||!checks.scrollHeight)throw new Error(`Viewport correctness failed: ${JSON.stringify(checks)}`);return checks;
+}
+async function execute(data,arm,run,warmup){
+ if(document.hidden)throw new Error('Tab was hidden. Run is invalid because paint timing requires visibility.');
+ implementation=arm;rows.replaceChildren();viewport.scrollTop=0;await painted();
+ mode.textContent=`${arm} · ${data.length.toLocaleString('en-US')} source invoices`;
+ const started=performance.now();selected=data.filter(invoice=>invoice.status==='overdue');render();await painted();const elapsed=performance.now()-started;
+ if(document.hidden)throw new Error('Tab became hidden during the timed workload.');
+ const renderedRows=rows.querySelectorAll('.invoice').length,viewportChecks=await verify();
+ return {size:data.length,arm,run,warmup,elapsedMs:elapsed,matchedCount:selected.length,checksum:checksum(selected),renderedRows,viewportChecks};
+}
+function securityChecks(){return ['Customer 42','A & B','North < East > West','Quote \" and apostrophe \'' ,'<b data-probe>Customer 42</b>','<span title="synthetic">Invoice</span>'].map((input,index)=>{const before=document.createElement('div'),after=document.createElement('div');before.innerHTML=input;after.textContent=input;return {id:`encoding-${index+1}`,input,expectedText:input,beforeText:before.textContent,afterText:after.textContent,beforeElementCount:before.querySelectorAll('*').length,afterElementCount:after.querySelectorAll('*').length,passed:after.textContent===input&&after.querySelectorAll('*').length===0};});}
+button.addEventListener('click',async()=>{
+ button.disabled=true;const startedAt=new Date().toISOString();const samples=[];
+ const manifest={protocol:'invoice-dom-v1',sizes:SIZES,warmups:WARMUPS,runs:RUNS,rowHeight:ROW_HEIGHT,windowRows:WINDOW_ROWS,browser:navigator.userAgent,platform:navigator.platform,hardwareConcurrency:navigator.hardwareConcurrency,viewport:{width:innerWidth,height:innerHeight,listHeight:viewport.clientHeight},visibilityAtStart:document.visibilityState,startedAt,scope:'Browser filtering, DOM replacement, forced layout and two requestAnimationFrame callbacks; no network or database. Two rAFs include a rendering opportunity, not compositor-presentation instrumentation. Correctness checks occur outside timing. Both implementations use the same deterministic source data and overdue filter.'};
+ try{
+  status.textContent='Running · keep this tab visible';
+  for(const size of SIZES){const data=dataset(size);for(let run=-WARMUPS;run<RUNS;run++){const arms=run%2===0?['legacy','virtualized']:['virtualized','legacy'];for(const arm of arms){progress.textContent=`${size} invoices · ${arm} · ${run<0?'warmup '+(run+WARMUPS+1):'recorded run '+(run+1)}`;const sample=await execute(data,arm,run<0?run+WARMUPS+1:run+1,run<0);samples.push(sample);}}}
+  const result={manifest:{...manifest,finishedAt:new Date().toISOString(),status:'completed'},samples,security:securityChecks()};output.textContent=JSON.stringify(result,null,2);status.textContent='Completed · all viewport and checksum checks passed';progress.textContent=`${samples.filter(item=>!item.warmup).length} recorded samples + ${samples.filter(item=>item.warmup).length} warmups`;
+  const response=await fetch('/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(result)});if(!response.ok)throw new Error(`Local evidence save failed: ${response.status}`);status.textContent='Completed and saved · all viewport checks passed';
+ }catch(error){const result={manifest:{...manifest,finishedAt:new Date().toISOString(),status:'failed',error:String(error)},samples};output.textContent=JSON.stringify(result,null,2);status.textContent=String(error);await fetch('/result',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(result)}).catch(()=>{});}
+ finally{button.disabled=false;}
+});
+</script></html>

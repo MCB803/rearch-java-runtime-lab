@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-10-15T09:15:54.695915+00:00",
+  "kind": "synthetic-measured-lab",
+  "experiments": [
+    {
+      "id": "java-order-fanout",
+      "pointUnit": "orders",
+      "serviceCapacity": 64,
+      "points": [
+        {
+          "size": 16,
+          "arms": [
+            {
+              "id": "legacy-java8",
+              "runs": 1,
+              "medianMs": 175.758875,
+              "minMs": 175.758875,
+              "maxMs": 175.758875,
+              "p95Ms": 175.698041,
+              "medianCpuMs": 21.818,
+              "peakPlatformThreads": 12,
+              "operations": 16,
+              "dependencyCalls": 48,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "runtime-java25",
+              "runs": 1,
+              "medianMs": 175.838875,
+              "minMs": 175.838875,
+              "maxMs": 175.838875,
+              "p95Ms": 175.825417,
+              "medianCpuMs": 22.229,
+              "peakPlatformThreads": 14,
+              "operations": 16,
+              "dependencyCalls": 48,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-platform-java25",
+              "runs": 1,
+              "medianMs": 30.671542,
+              "minMs": 30.671542,
+              "maxMs": 30.671542,
+              "p95Ms": 30.652542,
+              "medianCpuMs": 12.964,
+              "peakPlatformThreads": 70,
+              "operations": 16,
+              "dependencyCalls": 48,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-virtual-java25",
+              "runs": 1,
+              "medianMs": 31.449667,
+              "minMs": 31.449667,
+              "maxMs": 31.449667,
+              "p95Ms": 31.424208,
+              "medianCpuMs": 21.953,
+              "peakPlatformThreads": 18,
+              "operations": 16,
+              "dependencyCalls": 48,
+              "allOutputsVerified": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "java-dependency-bottleneck",
+      "pointUnit": "orders",
+      "serviceCapacity": 8,
+      "points": []
+    }
+  ]
+}

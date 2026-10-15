@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "{\"implementation\":\"fanout\",\"executor\":\"virtual\",\"limit\":64,\"size\":16,\"elapsedNanos\":44188584,\"p50Nanos\":43852834,\"p95Nanos\":44090542,\"p99Nanos\":44090542,\"processCpuNanos\":12646000,\"peakPlatformThreads\":18,\"warmupBatches\":61,\"warmupNanos\":2023036167,\"dependencyCalls\":48,\"errors\":0,\"outputs\":[-1,10336,10372,10408,10444,10480,10516,10552,10588,10624,10660,10696,10732,10521,10557,10593]}\n",
+  "stderr": ""
+}

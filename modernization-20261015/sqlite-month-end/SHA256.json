@@ -1,0 +1,16 @@
+{
+  "manifest.json": "15b9fad7ca43e3675a42dc30a1b6e7a8457aad5782ceba0d266a80d5a2a76934",
+  "query-plans.json": "f8f103a7a2b7dfe14aa62a76e5e749999029dae0e09c84c9fe0e2d45681f6031",
+  "raw.csv": "3b1cdd83334a02f34baafc06685e6a0c6fc39bf7dc4cf7100a6ef27b0986ee8e",
+  "raw.jsonl": "4c3ac6c1b5f5090844260473c02b6c3aace68008c22a6126069a6149f90d86bc",
+  "sources/README.md": "4cbb3d7c839472762b313d8bf0f22374a82c32475deeeb18ab802a3f40332c9b",
+  "sources/benchmark.php": "43ec3bae5d32a9f21ef8d07eb00783dcfb2184e6dc19b9df9ac66633d3e713bc",
+  "sources/protocol.json": "a008fb2af469b82b4b8e23efdbe384795f35852cabe48c0d1ccd913197ecdeca",
+  "sources/run.py": "16215e8bcf618aa1cdc9d1c76d6f9b56b7ec77e6437a302f09253dc6301bbc76",
+  "sources/summarize.py": "8f6d5633a89f75e296bec907788d3aa642db2c0263ddccad69183bb96375fe2b",
+  "sources/test_harness.php": "934fefefa6ae399b19f4c2eaa74df3c84dc9358b4d4d047822eaef366ce6b127",
+  "sources/test_publication.py": "93940fedc19794c5cada743e25903719ba1bc2576d86f30bd164f0f2c1bf1e88",
+  "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "summary.json": "9e4a9b960dea281bfd4ecf955e29fc05c95a8184592c3737171f8e1b62564801",
+  "test-harness.txt": "282db0f2f0071d749ef09e01a75c173af32652202e17a2061fb7ee83f79f00ef"
+}

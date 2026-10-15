@@ -1,0 +1,14 @@
+{
+  "status": "accepted-synthetic-workflow-scope",
+  "checkedAt": "2026-10-15T09:25:40.116814+00:00",
+  "runs": 140,
+  "independentOrderChecks": 18560,
+  "testsPassed": 10,
+  "allRunLogsSuccess": true,
+  "serviceErrors": 0,
+  "sourceAndDataHashesVerified": true,
+  "scope": "Local synthetic workflow modernization plus runtime/platform/dependency-capacity controls; no customer, pure-version, security, monetary or RSS claim",
+  "rawData": "full/raw.jsonl",
+  "manifest": "full/manifest.json",
+  "sha256": "full/SHA256.json"
+}

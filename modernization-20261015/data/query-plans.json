@@ -1,0 +1,604 @@
+[
+  {
+    "kind": "fixture",
+    "size": 1000,
+    "customers": 200,
+    "inputSha256": "2d71ead559f81122dc6bcfc2cf624ecd52a5eaab928e76d6ca2fb2eeaa7ec044",
+    "outputSha256": "eedc53b5bccb62b26cd8690a3287ce73323b8a555aeb23d407f95745ff4df282",
+    "outputRows": 200,
+    "indexBuildSeconds": 0.000223375,
+    "tableBytes": 32768,
+    "withIndexBytes": 57344,
+    "indexExtraBytes": 24576,
+    "plans": {
+      "unindexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SCAN o"
+        }
+      ],
+      "indexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SEARCH o USING COVERING INDEX orders_customer_status_total (customer_id=? AND status=?)"
+        }
+      ],
+      "indexed-grouped-control": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "MATERIALIZE t"
+        },
+        {
+          "id": 10,
+          "parent": 3,
+          "notused": 0,
+          "detail": "SCAN orders USING COVERING INDEX orders_customer_status_total"
+        },
+        {
+          "id": 46,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 52,
+          "parent": 0,
+          "notused": 0,
+          "detail": "BLOOM FILTER ON t (customer_id=?)"
+        },
+        {
+          "id": 62,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SEARCH t USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "fixture",
+    "size": 3000,
+    "customers": 200,
+    "inputSha256": "1d2f65f05aca9052ef05c3d0806e1a9c8b8e3cb1271de90a7b01635c36f1bfa1",
+    "outputSha256": "2403e85d55a6063cffeabe3a9c602b3a6512479a6ca9fc28b090c9c69f2cc64b",
+    "outputRows": 200,
+    "indexBuildSeconds": 0.000653333,
+    "tableBytes": 69632,
+    "withIndexBytes": 131072,
+    "indexExtraBytes": 61440,
+    "plans": {
+      "unindexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SCAN o"
+        }
+      ],
+      "indexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SEARCH o USING COVERING INDEX orders_customer_status_total (customer_id=? AND status=?)"
+        }
+      ],
+      "indexed-grouped-control": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "MATERIALIZE t"
+        },
+        {
+          "id": 10,
+          "parent": 3,
+          "notused": 0,
+          "detail": "SCAN orders USING COVERING INDEX orders_customer_status_total"
+        },
+        {
+          "id": 46,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 52,
+          "parent": 0,
+          "notused": 0,
+          "detail": "BLOOM FILTER ON t (customer_id=?)"
+        },
+        {
+          "id": 62,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SEARCH t USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "fixture",
+    "size": 10000,
+    "customers": 200,
+    "inputSha256": "e4b4fc5f19911676fe68caffbc18263532edb826bcea1a647be4a5102aa2486e",
+    "outputSha256": "2b751c52f4f2b1af098803368478ff9a84c7338944d02636697c51331ad34ed0",
+    "outputRows": 200,
+    "indexBuildSeconds": 0.002674292,
+    "tableBytes": 200704,
+    "withIndexBytes": 393216,
+    "indexExtraBytes": 192512,
+    "plans": {
+      "unindexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SCAN o"
+        }
+      ],
+      "indexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SEARCH o USING COVERING INDEX orders_customer_status_total (customer_id=? AND status=?)"
+        }
+      ],
+      "indexed-grouped-control": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "MATERIALIZE t"
+        },
+        {
+          "id": 10,
+          "parent": 3,
+          "notused": 0,
+          "detail": "SCAN orders USING COVERING INDEX orders_customer_status_total"
+        },
+        {
+          "id": 46,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 52,
+          "parent": 0,
+          "notused": 0,
+          "detail": "BLOOM FILTER ON t (customer_id=?)"
+        },
+        {
+          "id": 62,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SEARCH t USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "fixture",
+    "size": 30000,
+    "customers": 200,
+    "inputSha256": "fb4d5da86ebfd61a48d810c568f5133923e3b7a335acb4c4a86a4e786db50392",
+    "outputSha256": "2ce77e142168c9784b8182891e0dfb0dc410638c77648302c9ceb2ed443d63c6",
+    "outputRows": 200,
+    "indexBuildSeconds": 0.008520542,
+    "tableBytes": 585728,
+    "withIndexBytes": 1146880,
+    "indexExtraBytes": 561152,
+    "plans": {
+      "unindexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SCAN o"
+        }
+      ],
+      "indexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SEARCH o USING COVERING INDEX orders_customer_status_total (customer_id=? AND status=?)"
+        }
+      ],
+      "indexed-grouped-control": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "MATERIALIZE t"
+        },
+        {
+          "id": 10,
+          "parent": 3,
+          "notused": 0,
+          "detail": "SCAN orders USING COVERING INDEX orders_customer_status_total"
+        },
+        {
+          "id": 46,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 52,
+          "parent": 0,
+          "notused": 0,
+          "detail": "BLOOM FILTER ON t (customer_id=?)"
+        },
+        {
+          "id": 62,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SEARCH t USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "fixture",
+    "size": 60000,
+    "customers": 200,
+    "inputSha256": "75d52f02720a4ba99bfe629ca506e03e5569380f6143d0d011365fd9128c7408",
+    "outputSha256": "94b3a77497a8cb9f85e712d6fe6518e963777e076d5426fa6cc88a8285b9f4b0",
+    "outputRows": 200,
+    "indexBuildSeconds": 0.023819625,
+    "tableBytes": 1175552,
+    "withIndexBytes": 2330624,
+    "indexExtraBytes": 1155072,
+    "plans": {
+      "unindexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SCAN o"
+        }
+      ],
+      "indexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SEARCH o USING COVERING INDEX orders_customer_status_total (customer_id=? AND status=?)"
+        }
+      ],
+      "indexed-grouped-control": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "MATERIALIZE t"
+        },
+        {
+          "id": 10,
+          "parent": 3,
+          "notused": 0,
+          "detail": "SCAN orders USING COVERING INDEX orders_customer_status_total"
+        },
+        {
+          "id": 46,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 52,
+          "parent": 0,
+          "notused": 0,
+          "detail": "BLOOM FILTER ON t (customer_id=?)"
+        },
+        {
+          "id": 62,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SEARCH t USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "fixture",
+    "size": 100000,
+    "customers": 200,
+    "inputSha256": "9c61f95ff27bde5f3154174072be83b8e3940733a09a12b9216eb39cf7eee9fd",
+    "outputSha256": "ce7936af0a417ea786f55fd1f9a0c514d480020c90879f5cb524a331611fc93e",
+    "outputRows": 200,
+    "indexBuildSeconds": 0.039609,
+    "tableBytes": 1966080,
+    "withIndexBytes": 3903488,
+    "indexExtraBytes": 1937408,
+    "plans": {
+      "unindexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SCAN o"
+        }
+      ],
+      "indexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SEARCH o USING COVERING INDEX orders_customer_status_total (customer_id=? AND status=?)"
+        }
+      ],
+      "indexed-grouped-control": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "MATERIALIZE t"
+        },
+        {
+          "id": 10,
+          "parent": 3,
+          "notused": 0,
+          "detail": "SCAN orders USING COVERING INDEX orders_customer_status_total"
+        },
+        {
+          "id": 46,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 52,
+          "parent": 0,
+          "notused": 0,
+          "detail": "BLOOM FILTER ON t (customer_id=?)"
+        },
+        {
+          "id": 62,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SEARCH t USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "fixture",
+    "size": 200000,
+    "customers": 200,
+    "inputSha256": "edb465d4d373d65a06cc43e209aed9a582d197c02f268beeea7e2908f9145fac",
+    "outputSha256": "0752377afdf2e05b615a07307219341cb22f26e50bc4901c92f70640c3972938",
+    "outputRows": 200,
+    "indexBuildSeconds": 0.077556792,
+    "tableBytes": 3932160,
+    "withIndexBytes": 7831552,
+    "indexExtraBytes": 3899392,
+    "plans": {
+      "unindexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SCAN o"
+        }
+      ],
+      "indexed-correlated": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 7,
+          "parent": 0,
+          "notused": 0,
+          "detail": "CORRELATED SCALAR SUBQUERY 1"
+        },
+        {
+          "id": 12,
+          "parent": 7,
+          "notused": 0,
+          "detail": "SEARCH o USING COVERING INDEX orders_customer_status_total (customer_id=? AND status=?)"
+        }
+      ],
+      "indexed-grouped-control": [
+        {
+          "id": 3,
+          "parent": 0,
+          "notused": 0,
+          "detail": "MATERIALIZE t"
+        },
+        {
+          "id": 10,
+          "parent": 3,
+          "notused": 0,
+          "detail": "SCAN orders USING COVERING INDEX orders_customer_status_total"
+        },
+        {
+          "id": 46,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SCAN c"
+        },
+        {
+          "id": 52,
+          "parent": 0,
+          "notused": 0,
+          "detail": "BLOOM FILTER ON t (customer_id=?)"
+        },
+        {
+          "id": 62,
+          "parent": 0,
+          "notused": 0,
+          "detail": "SEARCH t USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN"
+        }
+      ]
+    }
+  }
+]

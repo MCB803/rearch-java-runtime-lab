@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "id": "frontend-invoice-list",
+  "manifest": {
+    "protocol": "invoice-dom-v1",
+    "sizes": [
+      1000,
+      10000,
+      50000
+    ],
+    "warmups": 2,
+    "runs": 10,
+    "rowHeight": 40,
+    "windowRows": 40,
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "platform": "MacIntel",
+    "hardwareConcurrency": 8,
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "listHeight": 558
+    },
+    "visibilityAtStart": "visible",
+    "startedAt": "2026-10-15T09:33:18.037Z",
+    "scope": "Browser filtering, DOM replacement, forced layout and two requestAnimationFrame callbacks; no network or database. Two rAFs include a rendering opportunity, not compositor-presentation instrumentation. Correctness checks occur outside timing. Both implementations use the same deterministic source data and overdue filter.",
+    "finishedAt": "2026-10-15T09:33:46.190Z",
+    "status": "completed"
+  },
+  "beforeArm": "legacy",
+  "afterArm": "virtualized",
+  "runs": 10,
+  "aggregation": "median",
+  "allOutputsEquivalent": true,
+  "resource": "rendered invoice DOM rows",
+  "points": [
+    {
+      "size": 1000,
+      "arms": {
+        "legacy": {
+          "medianMs": 29.400000005960464,
+          "minMs": 24,
+          "maxMs": 39.900000005960464,
+          "resourceValue": 666,
+          "matchedCount": 666,
+          "checksum": "163322263476",
+          "runs": 10
+        },
+        "virtualized": {
+          "medianMs": 16.599999994039536,
+          "minMs": 16.19999998807907,
+          "maxMs": 16.600000023841858,
+          "resourceValue": 40,
+          "matchedCount": 666,
+          "checksum": "163322263476",
+          "runs": 10
+        }
+      }
+    },
+    {
+      "size": 10000,
+      "arms": {
+        "legacy": {
+          "medianMs": 244.8999999910593,
+          "minMs": 214.69999998807907,
+          "maxMs": 301.69999998807907,
+          "resourceValue": 6666,
+          "matchedCount": 6666,
+          "checksum": "15249119350476",
+          "runs": 10
+        },
+        "virtualized": {
+          "medianMs": 16.549999997019768,
+          "minMs": 13.800000011920929,
+          "maxMs": 17.5,
+          "resourceValue": 40,
+          "matchedCount": 6666,
+          "checksum": "15249119350476",
+          "runs": 10
+        }
+      }
+    },
+    {
+      "size": 50000,
+      "arms": {
+        "legacy": {
+          "medianMs": 1385.7999999970198,
+          "minMs": 1175.5,
+          "maxMs": 1933.699999988079,
+          "resourceValue": 33333,
+          "matchedCount": 33333,
+          "checksum": "383299514245238",
+          "runs": 10
+        },
+        "virtualized": {
+          "medianMs": 16.5,
+          "minMs": 13.199999988079071,
+          "maxMs": 112.69999998807907,
+          "resourceValue": 40,
+          "matchedCount": 33333,
+          "checksum": "383299514245238",
+          "runs": 10
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "id": "encoding-1",
+      "input": "Customer 42",
+      "expectedText": "Customer 42",
+      "beforeText": "Customer 42",
+      "afterText": "Customer 42",
+      "beforeElementCount": 0,
+      "afterElementCount": 0,
+      "passed": true
+    },
+    {
+      "id": "encoding-2",
+      "input": "A & B",
+      "expectedText": "A & B",
+      "beforeText": "A & B",
+      "afterText": "A & B",
+      "beforeElementCount": 0,
+      "afterElementCount": 0,
+      "passed": true
+    },
+    {
+      "id": "encoding-3",
+      "input": "North < East > West",
+      "expectedText": "North < East > West",
+      "beforeText": "North < East > West",
+      "afterText": "North < East > West",
+      "beforeElementCount": 0,
+      "afterElementCount": 0,
+      "passed": true
+    },
+    {
+      "id": "encoding-4",
+      "input": "Quote \" and apostrophe '",
+      "expectedText": "Quote \" and apostrophe '",
+      "beforeText": "Quote \" and apostrophe '",
+      "afterText": "Quote \" and apostrophe '",
+      "beforeElementCount": 0,
+      "afterElementCount": 0,
+      "passed": true
+    },
+    {
+      "id": "encoding-5",
+      "input": "<b data-probe>Customer 42</b>",
+      "expectedText": "<b data-probe>Customer 42</b>",
+      "beforeText": "Customer 42",
+      "afterText": "<b data-probe>Customer 42</b>",
+      "beforeElementCount": 1,
+      "afterElementCount": 0,
+      "passed": true
+    },
+    {
+      "id": "encoding-6",
+      "input": "<span title=\"synthetic\">Invoice</span>",
+      "expectedText": "<span title=\"synthetic\">Invoice</span>",
+      "beforeText": "Invoice",
+      "afterText": "<span title=\"synthetic\">Invoice</span>",
+      "beforeElementCount": 1,
+      "afterElementCount": 0,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,907 @@
+{
+  "schemaVersion": 1,
+  "status": "completed",
+  "startedAt": "2026-10-15T09:16:13.987358+00:00",
+  "profile": "full",
+  "hardware": {
+    "system": "Darwin",
+    "release": "25.5.0",
+    "architecture": "arm64",
+    "logicalCpus": 8,
+    "machdep.cpu.brand_string": "Apple M3",
+    "hw.memsize": "25769803776",
+    "hw.physicalcpu": "8"
+  },
+  "jdks": {
+    "8": {
+      "java.runtime.version": "1.8.0_432-b06",
+      "java.specification.version": "1.8",
+      "java.vendor": "Amazon.com Inc.",
+      "java.vm.name": "OpenJDK 64-Bit Server VM",
+      "os.arch": "aarch64"
+    },
+    "25": {
+      "java.runtime.version": "25.0.3+9-LTS",
+      "java.specification.version": "25",
+      "java.vendor": "Amazon.com Inc.",
+      "java.vm.name": "OpenJDK 64-Bit Server VM",
+      "os.arch": "aarch64"
+    }
+  },
+  "sourceSha256": {
+    "run.py": "2c7d3c34f03b37e87d6a69f706c09154dd26ca86eb84920dd8de55daca7229ee",
+    "test_harness.py": "170fa9abcacf19c07b716f6cc9b10000c44cbb6c19d7ffb225abf4e83cb33296",
+    "README.md": "8b8a5df7900e2918bbe2b0fd2877a62f0ee84fecdc873c45fc01f84558c5637a",
+    "OrderWorkflow.java": "0f1389c724edbf70950970bd7b490568418827e81b4d1894641a4201eeb5d569"
+  },
+  "jvmFlags": [
+    "-Xms128m",
+    "-Xmx128m",
+    "-XX:+UseG1GC"
+  ],
+  "jobs": [
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 8
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 4
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 3
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 7
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 2
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 6
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 3
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 1
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 7
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 5
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 1
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 2
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 9
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 6
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 10
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 5
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 10
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 2
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 6
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 3
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 7
+    },
+    {
+      "arm": "runtime-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 10
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 5
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 8
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 64,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "modern-platform-java25",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 1
+    },
+    {
+      "arm": "modern-virtual-java25",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 16,
+      "serviceCapacity": 64,
+      "repeat": 9
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 64,
+      "repeat": 4
+    },
+    {
+      "arm": "legacy-java8",
+      "size": 256,
+      "serviceCapacity": 8,
+      "repeat": 4
+    }
+  ],
+  "warmupMinimumMs": 2000,
+  "repetitionsPerPoint": 10,
+  "dependencyDelayMs": 25,
+  "dependencyContract": "Three independent lookups per order: price cents, stock quantity, shipping cents. Same service code and delay in every arm. Each call uses a fresh loopback TCP socket; modeled dependency capacity is stated per experiment.",
+  "outputContract": "Per order: price + shipping when stock > 0; otherwise -1. All result arrays are independently verified in Python.",
+  "environmentNotes": [
+    "Shared Apple developer workstation; desktop/browser/website may remain running",
+    "Java and PHP/DB full measurement windows coordinated to avoid overlap",
+    "Host load recorded for every run; no fixed CPU quota or memory RSS measurement"
+  ],
+  "limitations": [
+    "Synthetic newly written legacy-pattern reproduction, not a customer migration",
+    "25ms is a dependency model parameter, not measured third-party latency",
+    "Primary comparison changes architecture and concurrency as well as runtime; runtime-only and same-concurrency platform controls are retained",
+    "Virtual threads are not faster CPU threads; peakPlatformThreads counts JVM platform threads, not total virtual tasks",
+    "p95Ms is median of per-run order completion p95, including batch queueing, not pooled p95",
+    "No monetary cost, production traffic, security score or guaranteed improvement conclusion",
+    "Installed Java 8 patch is old; this is not a comparison to current patched Java8",
+    "Warmup stability and isolated production-hardware repeat remain outside this local experiment"
+  ],
+  "finishedAt": "2026-10-15T09:25:40.111934+00:00",
+  "completedRuns": 140,
+  "plannedRuns": 140
+}

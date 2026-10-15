@@ -1,0 +1,650 @@
+[
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 2,
+    "warmup": true
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 1,
+    "warmup": true
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 2,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 2,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 2,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 2,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 2,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 2,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 2,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 10000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 1000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 1,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 50000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 4,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 9,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 2,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 10000,
+    "repeat": 3,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 7,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 1000,
+    "repeat": 5,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "modern-dictionary",
+    "size": 50000,
+    "repeat": 6,
+    "warmup": false
+  },
+  {
+    "arm": "legacy-linear",
+    "size": 10000,
+    "repeat": 10,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 1000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 8,
+    "warmup": false
+  },
+  {
+    "arm": "modern-frozen",
+    "size": 50000,
+    "repeat": 2,
+    "warmup": false
+  }
+]

@@ -1,0 +1,1057 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-10-15T09:13:37+00:00",
+  "completedAt": "2026-10-15T09:14:32+00:00",
+  "environment": {
+    "kind": "environment",
+    "startedAt": "2026-10-15T09:13:37+00:00",
+    "phpVersion": "8.4.26",
+    "sqliteVersion": "3.46.1",
+    "architecture": "aarch64",
+    "os": "Linux",
+    "cpuCount": 8,
+    "opcacheCli": "0",
+    "memoryLimit": "768M",
+    "sizes": [
+      1000,
+      3000,
+      10000,
+      30000,
+      60000,
+      100000,
+      200000
+    ],
+    "runs": 10,
+    "warmups": 2,
+    "customers": 200,
+    "timing": "hrtime(true) monotonic wall clock; getrusage process user+system CPU",
+    "scope": "same-runtime implementation and SQL-index experiments, not a PHP/DB version comparison"
+  },
+  "experiments": [
+    {
+      "id": "php-report",
+      "beforeArm": "php-repeated-scan",
+      "afterArm": "php-one-pass",
+      "sizes": [
+        1000,
+        3000,
+        10000,
+        30000,
+        60000,
+        100000,
+        200000
+      ],
+      "beforeSeconds": [
+        0.00292975,
+        0.008361687999999999,
+        0.028425646,
+        0.083354104,
+        0.19050424999999999,
+        0.4367164375,
+        1.2651225625
+      ],
+      "afterSeconds": [
+        4.0000500000000004e-05,
+        0.00011364550000000001,
+        0.0003710625,
+        0.0008979585000000001,
+        0.0020590419999999996,
+        0.004175479500000001,
+        0.0084869375
+      ],
+      "beforeCpuSeconds": [
+        0.0029165,
+        0.0083625,
+        0.028429,
+        0.0833515,
+        0.1904785,
+        0.436251,
+        1.2649005
+      ],
+      "afterCpuSeconds": [
+        4.1e-05,
+        0.00011449999999999999,
+        0.0003725,
+        0.0009015,
+        0.0020645,
+        0.0041825000000000005,
+        0.008494999999999999
+      ],
+      "speedup": [
+        73.24283446456919,
+        73.57693881411933,
+        76.60608657571164,
+        92.82623194724476,
+        92.52081793377698,
+        104.59072724461943,
+        149.067029479126
+      ],
+      "runs": 10,
+      "aggregation": "median",
+      "allOutputsEquivalent": true
+    },
+    {
+      "id": "sqlite-report",
+      "beforeArm": "sql-unindexed-correlated",
+      "afterArm": "sql-indexed-correlated",
+      "sizes": [
+        1000,
+        3000,
+        10000,
+        30000,
+        60000,
+        100000,
+        200000
+      ],
+      "beforeSeconds": [
+        0.0059947505,
+        0.0167846455,
+        0.055749396500000006,
+        0.1751749165,
+        0.345649271,
+        0.5659201875,
+        1.1291590005
+      ],
+      "afterSeconds": [
+        0.0001456875,
+        0.00022697899999999998,
+        0.000535542,
+        0.001229646,
+        0.0022918749999999996,
+        0.003691146,
+        0.0071883120000000005
+      ],
+      "beforeCpuSeconds": [
+        0.005995500000000001,
+        0.016785500000000002,
+        0.055743,
+        0.175158,
+        0.3456165,
+        0.5659000000000001,
+        1.1290045000000002
+      ],
+      "afterCpuSeconds": [
+        0.000147,
+        0.0002275,
+        0.0005375,
+        0.0012309999999999999,
+        0.0022979999999999997,
+        0.0036925,
+        0.007187000000000001
+      ],
+      "speedup": [
+        41.14800858000858,
+        73.94801060891096,
+        104.0990183776436,
+        142.45963187779248,
+        150.81506233978732,
+        153.31828854778433,
+        157.08263643815127
+      ],
+      "runs": 10,
+      "aggregation": "median",
+      "allOutputsEquivalent": true,
+      "controlArm": "sql-indexed-grouped-control",
+      "controlSeconds": [
+        0.000213146,
+        0.00029208399999999996,
+        0.000694479,
+        0.0016945624999999999,
+        0.00326425,
+        0.005212688,
+        0.010158396
+      ]
+    }
+  ],
+  "points": [
+    {
+      "size": 1000,
+      "arms": {
+        "php-repeated-scan": {
+          "seconds": {
+            "median": 0.00292975,
+            "min": 0.00277825,
+            "max": 0.00303675,
+            "p95NearestRank": 0.00303675,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0029165,
+            "min": 0.002779,
+            "max": 0.003037,
+            "p95NearestRank": 0.003037,
+            "n": 10
+          }
+        },
+        "php-one-pass": {
+          "seconds": {
+            "median": 4.0000500000000004e-05,
+            "min": 3.7583e-05,
+            "max": 4.9125e-05,
+            "p95NearestRank": 4.9125e-05,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 4.1e-05,
+            "min": 3.9e-05,
+            "max": 5e-05,
+            "p95NearestRank": 5e-05,
+            "n": 10
+          }
+        },
+        "sql-unindexed-correlated": {
+          "seconds": {
+            "median": 0.0059947505,
+            "min": 0.005756667,
+            "max": 0.006772,
+            "p95NearestRank": 0.006772,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.005995500000000001,
+            "min": 0.005758,
+            "max": 0.006777,
+            "p95NearestRank": 0.006777,
+            "n": 10
+          }
+        },
+        "sql-indexed-correlated": {
+          "seconds": {
+            "median": 0.0001456875,
+            "min": 0.000127875,
+            "max": 0.000295167,
+            "p95NearestRank": 0.000295167,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.000147,
+            "min": 0.000128,
+            "max": 0.000296,
+            "p95NearestRank": 0.000296,
+            "n": 10
+          }
+        },
+        "sql-indexed-grouped-control": {
+          "seconds": {
+            "median": 0.000213146,
+            "min": 0.000167625,
+            "max": 0.000327542,
+            "p95NearestRank": 0.000327542,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0002145,
+            "min": 0.000168,
+            "max": 0.000329,
+            "p95NearestRank": 0.000329,
+            "n": 10
+          }
+        }
+      },
+      "outputSha256": "eedc53b5bccb62b26cd8690a3287ce73323b8a555aeb23d407f95745ff4df282",
+      "indexBuildSeconds": 0.000223375,
+      "tableBytes": 32768,
+      "withIndexBytes": 57344,
+      "indexExtraBytes": 24576
+    },
+    {
+      "size": 3000,
+      "arms": {
+        "php-repeated-scan": {
+          "seconds": {
+            "median": 0.008361687999999999,
+            "min": 0.008246916,
+            "max": 0.008628083,
+            "p95NearestRank": 0.008628083,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0083625,
+            "min": 0.008248,
+            "max": 0.008629,
+            "p95NearestRank": 0.008629,
+            "n": 10
+          }
+        },
+        "php-one-pass": {
+          "seconds": {
+            "median": 0.00011364550000000001,
+            "min": 0.000101792,
+            "max": 0.000127833,
+            "p95NearestRank": 0.000127833,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.00011449999999999999,
+            "min": 0.000102,
+            "max": 0.000129,
+            "p95NearestRank": 0.000129,
+            "n": 10
+          }
+        },
+        "sql-unindexed-correlated": {
+          "seconds": {
+            "median": 0.0167846455,
+            "min": 0.016565166,
+            "max": 0.016925541,
+            "p95NearestRank": 0.016925541,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.016785500000000002,
+            "min": 0.016566,
+            "max": 0.016927,
+            "p95NearestRank": 0.016927,
+            "n": 10
+          }
+        },
+        "sql-indexed-correlated": {
+          "seconds": {
+            "median": 0.00022697899999999998,
+            "min": 0.000216375,
+            "max": 0.000249083,
+            "p95NearestRank": 0.000249083,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0002275,
+            "min": 0.000217,
+            "max": 0.000251,
+            "p95NearestRank": 0.000251,
+            "n": 10
+          }
+        },
+        "sql-indexed-grouped-control": {
+          "seconds": {
+            "median": 0.00029208399999999996,
+            "min": 0.000277625,
+            "max": 0.000315875,
+            "p95NearestRank": 0.000315875,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.00029299999999999997,
+            "min": 0.000279,
+            "max": 0.000316,
+            "p95NearestRank": 0.000316,
+            "n": 10
+          }
+        }
+      },
+      "outputSha256": "2403e85d55a6063cffeabe3a9c602b3a6512479a6ca9fc28b090c9c69f2cc64b",
+      "indexBuildSeconds": 0.000653333,
+      "tableBytes": 69632,
+      "withIndexBytes": 131072,
+      "indexExtraBytes": 61440
+    },
+    {
+      "size": 10000,
+      "arms": {
+        "php-repeated-scan": {
+          "seconds": {
+            "median": 0.028425646,
+            "min": 0.027381625,
+            "max": 0.031593625,
+            "p95NearestRank": 0.031593625,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.028429,
+            "min": 0.027382,
+            "max": 0.031532,
+            "p95NearestRank": 0.031532,
+            "n": 10
+          }
+        },
+        "php-one-pass": {
+          "seconds": {
+            "median": 0.0003710625,
+            "min": 0.0003055,
+            "max": 0.00047075,
+            "p95NearestRank": 0.00047075,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0003725,
+            "min": 0.000306,
+            "max": 0.000472,
+            "p95NearestRank": 0.000472,
+            "n": 10
+          }
+        },
+        "sql-unindexed-correlated": {
+          "seconds": {
+            "median": 0.055749396500000006,
+            "min": 0.055365291,
+            "max": 0.057437042,
+            "p95NearestRank": 0.057437042,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.055743,
+            "min": 0.055367,
+            "max": 0.057424,
+            "p95NearestRank": 0.057424,
+            "n": 10
+          }
+        },
+        "sql-indexed-correlated": {
+          "seconds": {
+            "median": 0.000535542,
+            "min": 0.000471709,
+            "max": 0.000801292,
+            "p95NearestRank": 0.000801292,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0005375,
+            "min": 0.000473,
+            "max": 0.000803,
+            "p95NearestRank": 0.000803,
+            "n": 10
+          }
+        },
+        "sql-indexed-grouped-control": {
+          "seconds": {
+            "median": 0.000694479,
+            "min": 0.000638291,
+            "max": 0.001137,
+            "p95NearestRank": 0.001137,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0006950000000000001,
+            "min": 0.000639,
+            "max": 0.001077,
+            "p95NearestRank": 0.001077,
+            "n": 10
+          }
+        }
+      },
+      "outputSha256": "2b751c52f4f2b1af098803368478ff9a84c7338944d02636697c51331ad34ed0",
+      "indexBuildSeconds": 0.002674292,
+      "tableBytes": 200704,
+      "withIndexBytes": 393216,
+      "indexExtraBytes": 192512
+    },
+    {
+      "size": 30000,
+      "arms": {
+        "php-repeated-scan": {
+          "seconds": {
+            "median": 0.083354104,
+            "min": 0.082651792,
+            "max": 0.088864625,
+            "p95NearestRank": 0.088864625,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0833515,
+            "min": 0.082642,
+            "max": 0.088856,
+            "p95NearestRank": 0.088856,
+            "n": 10
+          }
+        },
+        "php-one-pass": {
+          "seconds": {
+            "median": 0.0008979585000000001,
+            "min": 0.000884958,
+            "max": 0.001426958,
+            "p95NearestRank": 0.001426958,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0009015,
+            "min": 0.000886,
+            "max": 0.001428,
+            "p95NearestRank": 0.001428,
+            "n": 10
+          }
+        },
+        "sql-unindexed-correlated": {
+          "seconds": {
+            "median": 0.1751749165,
+            "min": 0.173594708,
+            "max": 0.177172167,
+            "p95NearestRank": 0.177172167,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.175158,
+            "min": 0.173581,
+            "max": 0.176868,
+            "p95NearestRank": 0.176868,
+            "n": 10
+          }
+        },
+        "sql-indexed-correlated": {
+          "seconds": {
+            "median": 0.001229646,
+            "min": 0.001167334,
+            "max": 0.001248834,
+            "p95NearestRank": 0.001248834,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0012309999999999999,
+            "min": 0.001168,
+            "max": 0.00125,
+            "p95NearestRank": 0.00125,
+            "n": 10
+          }
+        },
+        "sql-indexed-grouped-control": {
+          "seconds": {
+            "median": 0.0016945624999999999,
+            "min": 0.001651875,
+            "max": 0.0017865,
+            "p95NearestRank": 0.0017865,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0016955,
+            "min": 0.001653,
+            "max": 0.001788,
+            "p95NearestRank": 0.001788,
+            "n": 10
+          }
+        }
+      },
+      "outputSha256": "2ce77e142168c9784b8182891e0dfb0dc410638c77648302c9ceb2ed443d63c6",
+      "indexBuildSeconds": 0.008520542,
+      "tableBytes": 585728,
+      "withIndexBytes": 1146880,
+      "indexExtraBytes": 561152
+    },
+    {
+      "size": 60000,
+      "arms": {
+        "php-repeated-scan": {
+          "seconds": {
+            "median": 0.19050424999999999,
+            "min": 0.1733075,
+            "max": 0.432048208,
+            "p95NearestRank": 0.432048208,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.1904785,
+            "min": 0.17329,
+            "max": 0.431999,
+            "p95NearestRank": 0.431999,
+            "n": 10
+          }
+        },
+        "php-one-pass": {
+          "seconds": {
+            "median": 0.0020590419999999996,
+            "min": 0.001866125,
+            "max": 0.0032685,
+            "p95NearestRank": 0.0032685,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0020645,
+            "min": 0.001869,
+            "max": 0.00327,
+            "p95NearestRank": 0.00327,
+            "n": 10
+          }
+        },
+        "sql-unindexed-correlated": {
+          "seconds": {
+            "median": 0.345649271,
+            "min": 0.342057625,
+            "max": 0.363394917,
+            "p95NearestRank": 0.363394917,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.3456165,
+            "min": 0.342051,
+            "max": 0.363172,
+            "p95NearestRank": 0.363172,
+            "n": 10
+          }
+        },
+        "sql-indexed-correlated": {
+          "seconds": {
+            "median": 0.0022918749999999996,
+            "min": 0.002246667,
+            "max": 0.002457041,
+            "p95NearestRank": 0.002457041,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0022979999999999997,
+            "min": 0.002248,
+            "max": 0.00246,
+            "p95NearestRank": 0.00246,
+            "n": 10
+          }
+        },
+        "sql-indexed-grouped-control": {
+          "seconds": {
+            "median": 0.00326425,
+            "min": 0.003163209,
+            "max": 0.003403708,
+            "p95NearestRank": 0.003403708,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.003265,
+            "min": 0.003164,
+            "max": 0.003405,
+            "p95NearestRank": 0.003405,
+            "n": 10
+          }
+        }
+      },
+      "outputSha256": "94b3a77497a8cb9f85e712d6fe6518e963777e076d5426fa6cc88a8285b9f4b0",
+      "indexBuildSeconds": 0.023819625,
+      "tableBytes": 1175552,
+      "withIndexBytes": 2330624,
+      "indexExtraBytes": 1155072
+    },
+    {
+      "size": 100000,
+      "arms": {
+        "php-repeated-scan": {
+          "seconds": {
+            "median": 0.4367164375,
+            "min": 0.381120708,
+            "max": 0.551986875,
+            "p95NearestRank": 0.551986875,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.436251,
+            "min": 0.381104,
+            "max": 0.551918,
+            "p95NearestRank": 0.551918,
+            "n": 10
+          }
+        },
+        "php-one-pass": {
+          "seconds": {
+            "median": 0.004175479500000001,
+            "min": 0.003552625,
+            "max": 0.005758625,
+            "p95NearestRank": 0.005758625,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0041825000000000005,
+            "min": 0.003558,
+            "max": 0.005768,
+            "p95NearestRank": 0.005768,
+            "n": 10
+          }
+        },
+        "sql-unindexed-correlated": {
+          "seconds": {
+            "median": 0.5659201875,
+            "min": 0.563529626,
+            "max": 0.583741209,
+            "p95NearestRank": 0.583741209,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.5659000000000001,
+            "min": 0.563497,
+            "max": 0.583706,
+            "p95NearestRank": 0.583706,
+            "n": 10
+          }
+        },
+        "sql-indexed-correlated": {
+          "seconds": {
+            "median": 0.003691146,
+            "min": 0.003630125,
+            "max": 0.003936875,
+            "p95NearestRank": 0.003936875,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0036925,
+            "min": 0.003631,
+            "max": 0.003939,
+            "p95NearestRank": 0.003939,
+            "n": 10
+          }
+        },
+        "sql-indexed-grouped-control": {
+          "seconds": {
+            "median": 0.005212688,
+            "min": 0.005135333,
+            "max": 0.005314416,
+            "p95NearestRank": 0.005314416,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.0052135,
+            "min": 0.005136,
+            "max": 0.005316,
+            "p95NearestRank": 0.005316,
+            "n": 10
+          }
+        }
+      },
+      "outputSha256": "ce7936af0a417ea786f55fd1f9a0c514d480020c90879f5cb524a331611fc93e",
+      "indexBuildSeconds": 0.039609,
+      "tableBytes": 1966080,
+      "withIndexBytes": 3903488,
+      "indexExtraBytes": 1937408
+    },
+    {
+      "size": 200000,
+      "arms": {
+        "php-repeated-scan": {
+          "seconds": {
+            "median": 1.2651225625,
+            "min": 1.14858175,
+            "max": 1.400302292,
+            "p95NearestRank": 1.400302292,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 1.2649005,
+            "min": 1.147417,
+            "max": 1.400034,
+            "p95NearestRank": 1.400034,
+            "n": 10
+          }
+        },
+        "php-one-pass": {
+          "seconds": {
+            "median": 0.0084869375,
+            "min": 0.007797084,
+            "max": 0.009013583,
+            "p95NearestRank": 0.009013583,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.008494999999999999,
+            "min": 0.007803,
+            "max": 0.009021,
+            "p95NearestRank": 0.009021,
+            "n": 10
+          }
+        },
+        "sql-unindexed-correlated": {
+          "seconds": {
+            "median": 1.1291590005,
+            "min": 1.120349876,
+            "max": 1.280432543,
+            "p95NearestRank": 1.280432543,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 1.1290045000000002,
+            "min": 1.120259,
+            "max": 1.280068,
+            "p95NearestRank": 1.280068,
+            "n": 10
+          }
+        },
+        "sql-indexed-correlated": {
+          "seconds": {
+            "median": 0.0071883120000000005,
+            "min": 0.0070795,
+            "max": 0.007478875,
+            "p95NearestRank": 0.007478875,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.007187000000000001,
+            "min": 0.007089,
+            "max": 0.007482,
+            "p95NearestRank": 0.007482,
+            "n": 10
+          }
+        },
+        "sql-indexed-grouped-control": {
+          "seconds": {
+            "median": 0.010158396,
+            "min": 0.010082583,
+            "max": 0.013702333,
+            "p95NearestRank": 0.013702333,
+            "n": 10
+          },
+          "cpuSeconds": {
+            "median": 0.010159999999999999,
+            "min": 0.010084,
+            "max": 0.013709,
+            "p95NearestRank": 0.013709,
+            "n": 10
+          }
+        }
+      },
+      "outputSha256": "0752377afdf2e05b615a07307219341cb22f26e50bc4901c92f70640c3972938",
+      "indexBuildSeconds": 0.077556792,
+      "tableBytes": 3932160,
+      "withIndexBytes": 7831552,
+      "indexExtraBytes": 3899392
+    }
+  ],
+  "security": {
+    "kind": "security",
+    "synthetic": true,
+    "scope": "owned-in-memory-lab",
+    "tenant": 1,
+    "fixtureRows": 12,
+    "cases": [
+      {
+        "id": "normal",
+        "input": "T1-001",
+        "expected": [
+          1
+        ],
+        "adversarial": false,
+        "arms": {
+          "legacy-concatenation": {
+            "rowIds": [
+              1
+            ],
+            "rowsReturned": 1,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          },
+          "prepared-only-control": {
+            "rowIds": [
+              1
+            ],
+            "rowsReturned": 1,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          },
+          "prepared-and-scoped": {
+            "rowIds": [
+              1
+            ],
+            "rowsReturned": 1,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          }
+        }
+      },
+      {
+        "id": "missing",
+        "input": "does-not-exist",
+        "expected": [],
+        "adversarial": false,
+        "arms": {
+          "legacy-concatenation": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          },
+          "prepared-only-control": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          },
+          "prepared-and-scoped": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          }
+        }
+      },
+      {
+        "id": "apostrophe",
+        "input": "T1-O'Brian",
+        "expected": [
+          6
+        ],
+        "adversarial": false,
+        "arms": {
+          "legacy-concatenation": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": true,
+            "passed": false
+          },
+          "prepared-only-control": {
+            "rowIds": [
+              6
+            ],
+            "rowsReturned": 1,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          },
+          "prepared-and-scoped": {
+            "rowIds": [
+              6
+            ],
+            "rowsReturned": 1,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          }
+        }
+      },
+      {
+        "id": "boolean-injection",
+        "input": "' OR 1=1 --",
+        "expected": [],
+        "adversarial": true,
+        "arms": {
+          "legacy-concatenation": {
+            "rowIds": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "rowsReturned": 12,
+            "otherTenantRows": 6,
+            "queryError": false,
+            "passed": false
+          },
+          "prepared-only-control": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          },
+          "prepared-and-scoped": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          }
+        }
+      },
+      {
+        "id": "tenant-injection",
+        "input": "' OR tenant_id=2 --",
+        "expected": [],
+        "adversarial": true,
+        "arms": {
+          "legacy-concatenation": {
+            "rowIds": [
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "rowsReturned": 6,
+            "otherTenantRows": 6,
+            "queryError": false,
+            "passed": false
+          },
+          "prepared-only-control": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          },
+          "prepared-and-scoped": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          }
+        }
+      },
+      {
+        "id": "direct-cross-tenant",
+        "input": "T2-001",
+        "expected": [],
+        "adversarial": true,
+        "arms": {
+          "legacy-concatenation": {
+            "rowIds": [
+              7
+            ],
+            "rowsReturned": 1,
+            "otherTenantRows": 1,
+            "queryError": false,
+            "passed": false
+          },
+          "prepared-only-control": {
+            "rowIds": [
+              7
+            ],
+            "rowsReturned": 1,
+            "otherTenantRows": 1,
+            "queryError": false,
+            "passed": false
+          },
+          "prepared-and-scoped": {
+            "rowIds": [],
+            "rowsReturned": 0,
+            "otherTenantRows": 0,
+            "queryError": false,
+            "passed": true
+          }
+        }
+      }
+    ],
+    "summary": {
+      "legacy-concatenation": {
+        "passed": 2,
+        "total": 6,
+        "adversarialPassed": 0,
+        "adversarialTotal": 3,
+        "otherTenantRowsAcrossCases": 13
+      },
+      "prepared-only-control": {
+        "passed": 5,
+        "total": 6,
+        "adversarialPassed": 2,
+        "adversarialTotal": 3,
+        "otherTenantRowsAcrossCases": 1
+      },
+      "prepared-and-scoped": {
+        "passed": 6,
+        "total": 6,
+        "adversarialPassed": 3,
+        "adversarialTotal": 3,
+        "otherTenantRowsAcrossCases": 0
+      }
+    }
+  },
+  "sampleCounts": {
+    "measured": 350,
+    "warmup": 70
+  },
+  "limitations": [
+    "Controlled synthetic report, not a customer project or production SLA.",
+    "PHP 8.4.26 runs both implementations; there is no measured PHP-version effect.",
+    "SQLite 3.46.1 runs both SQL versions; this is not a database-engine/version migration.",
+    "Warm in-memory reads, no network or disk I/O; serialization and dataset creation are excluded.",
+    "PHP CLI OPcache/JIT are off for both arms; web server throughput was not measured.",
+    "CPU time is measured process resource use; it is not a cloud bill or energy measurement.",
+    "The index consumes extra space and incurs one-time construction and ongoing write costs; ongoing writes were not benchmarked.",
+    "200 report customers are fixed across all sizes; closed/open status distribution is deterministic.",
+    "Security results cover only the six published synthetic tests; runtime upgrades do not automatically fix query authorization."
+  ]
+}

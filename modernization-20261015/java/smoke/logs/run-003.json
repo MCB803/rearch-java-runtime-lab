@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "{\"implementation\":\"legacy\",\"executor\":\"platform\",\"limit\":8,\"size\":16,\"elapsedNanos\":175758875,\"p50Nanos\":87941666,\"p95Nanos\":175698041,\"p99Nanos\":175698041,\"processCpuNanos\":21818000,\"peakPlatformThreads\":12,\"warmupBatches\":1,\"warmupNanos\":195942208,\"dependencyCalls\":48,\"errors\":0,\"outputs\":[-1,10336,10372,10408,10444,10480,10516,10552,10588,10624,10660,10696,10732,10521,10557,10593]}\n",
+  "stderr": ""
+}

@@ -1,5 +1,13 @@
 # ReArch Labs · Java 8 / Java 25 runtime experiment
 
+## Additional implementation experiments · 15 October 2026
+
+The [modernization laboratory index](modernization-20261015/README.md) adds six completed experiments: [Java order integration](modernization-20261015/java/README.md), [PHP report computation](modernization-20261015/data/README.md), [SQLite report indexing](modernization-20261015/data/README.md), [.NET catalog matching](modernization-20261015/dotnet/README.md), [browser invoice-list rendering](modernization-20261015/frontend/README.md), and [SQLite month-end reporting across up to five million records](modernization-20261015/sqlite-month-end/sources/README.md).
+
+These investigate implementation and data-access changes in different synthetic workflows. Their gains are not substitutes for the same-bytecode runtime comparison below. The original 440-run experiment, its raw measurements and its approximately 0.3% primary difference remain unchanged. In the new Java workflow, an unchanged-code runtime arm and a platform-thread concurrency control separate the effects of the changes; the PHP, SQLite and .NET experiments keep their respective runtime versions fixed.
+
+## Original runtime experiment
+
 A newly written synthetic workload, the same Java 8 bytecode, and two installed native arm64 runtimes. This repository contains the harness and every raw measurement from the completed, reviewed matrix. It does not contain customer data or claim a historical application migration.
 
 ## Reproduce

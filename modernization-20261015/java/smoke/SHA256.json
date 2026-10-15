@@ -1,0 +1,19 @@
+{
+  "logs/compile.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/run-001.json": "d93cc7b74ec410a38052c01f3f151646bef834ea73db8bd23f2658b3c23931d1",
+  "logs/run-002.json": "2b7926ecbe309d4d0b9f758c4d92135f237708e5335ac502352c8eca8a4725ed",
+  "logs/run-003.json": "ac8c0d0b099e2731badbdfec75d064daf6c61c97ec77a84cad8f4733b2c3ba5c",
+  "logs/run-004.json": "051606ae45b148c91be2c522033c493a296f406afbdbbbcf98d4740bf67ae1ab",
+  "logs/service-001.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/service-002.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/service-003.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "logs/service-004.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "manifest.json": "1b77caa2145a3eec861e47863e7aec845d201ad4bd66a2217e3f3035c708a8ad",
+  "raw.csv": "7a6760407ed3046d70115bfcba42e3dd498d50de18bafd068006eb9754f425cb",
+  "raw.jsonl": "ae5da12ccf16a1a559eac7aa1ddea429cd292e3d18390b862d97065bcf036e00",
+  "sources/OrderWorkflow.java": "0f1389c724edbf70950970bd7b490568418827e81b4d1894641a4201eeb5d569",
+  "sources/README.md": "8b8a5df7900e2918bbe2b0fd2877a62f0ee84fecdc873c45fc01f84558c5637a",
+  "sources/run.py": "2c7d3c34f03b37e87d6a69f706c09154dd26ca86eb84920dd8de55daca7229ee",
+  "sources/test_harness.py": "170fa9abcacf19c07b716f6cc9b10000c44cbb6c19d7ffb225abf4e83cb33296",
+  "summary.json": "0857b0cdad5c9c682c4c3595fce13b5cf4bf109375171a7d88732a1f81f06b4f"
+}

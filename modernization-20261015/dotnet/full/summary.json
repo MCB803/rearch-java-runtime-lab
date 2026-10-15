@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "kind": "synthetic-measured-lab",
+  "measuredAt": "2026-10-15T09:37:20.480363+00:00",
+  "experiments": [
+    {
+      "id": "dotnet-catalog-import",
+      "pointUnit": "rows",
+      "catalogSize": 10000,
+      "points": [
+        {
+          "size": 1000,
+          "arms": [
+            {
+              "id": "legacy-linear",
+              "runs": 10,
+              "medianMs": 14.215563,
+              "minMs": 13.933542,
+              "maxMs": 14.802167,
+              "medianCpuMs": 14.2374165,
+              "medianAllocatedBytes": 97064.0,
+              "medianIndexBuildMs": 0.0,
+              "operations": 1000,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-dictionary",
+              "runs": 10,
+              "medianMs": 0.2099585,
+              "minMs": 0.194625,
+              "maxMs": 0.252833,
+              "medianCpuMs": 0.22925050000000002,
+              "medianAllocatedBytes": 292080.0,
+              "medianIndexBuildMs": 0.1825415,
+              "operations": 1000,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-frozen",
+              "runs": 10,
+              "medianMs": 0.897208,
+              "minMs": 0.834042,
+              "maxMs": 1.122917,
+              "medianCpuMs": 0.915021,
+              "medianAllocatedBytes": 1218160.0,
+              "medianIndexBuildMs": 0.871375,
+              "operations": 1000,
+              "allOutputsVerified": true
+            }
+          ]
+        },
+        {
+          "size": 10000,
+          "arms": [
+            {
+              "id": "legacy-linear",
+              "runs": 10,
+              "medianMs": 143.3553955,
+              "minMs": 140.975001,
+              "maxMs": 151.424375,
+              "medianCpuMs": 142.927228,
+              "medianAllocatedBytes": 961064.0,
+              "medianIndexBuildMs": 0.0,
+              "operations": 10000,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-dictionary",
+              "runs": 10,
+              "medianMs": 0.466437,
+              "minMs": 0.403375,
+              "maxMs": 1.015791,
+              "medianCpuMs": 0.48802049999999997,
+              "medianAllocatedBytes": 364080.0,
+              "medianIndexBuildMs": 0.1871875,
+              "operations": 10000,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-frozen",
+              "runs": 10,
+              "medianMs": 1.058875,
+              "minMs": 0.999667,
+              "maxMs": 1.316667,
+              "medianCpuMs": 1.075792,
+              "medianAllocatedBytes": 1290160.0,
+              "medianIndexBuildMs": 0.8725205,
+              "operations": 10000,
+              "allOutputsVerified": true
+            }
+          ]
+        },
+        {
+          "size": 50000,
+          "arms": [
+            {
+              "id": "legacy-linear",
+              "runs": 10,
+              "medianMs": 708.219125,
+              "minMs": 700.016251,
+              "maxMs": 736.086708,
+              "medianCpuMs": 705.6820594999999,
+              "medianAllocatedBytes": 4801064.0,
+              "medianIndexBuildMs": 0.0,
+              "operations": 50000,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-dictionary",
+              "runs": 10,
+              "medianMs": 1.5061255,
+              "minMs": 1.42775,
+              "maxMs": 5.118917,
+              "medianCpuMs": 1.528416,
+              "medianAllocatedBytes": 684080.0,
+              "medianIndexBuildMs": 0.183021,
+              "operations": 50000,
+              "allOutputsVerified": true
+            },
+            {
+              "id": "modern-frozen",
+              "runs": 10,
+              "medianMs": 1.961271,
+              "minMs": 1.850625,
+              "maxMs": 2.285333,
+              "medianCpuMs": 1.991458,
+              "medianAllocatedBytes": 1610160.0,
+              "medianIndexBuildMs": 0.9231039999999999,
+              "operations": 50000,
+              "allOutputsVerified": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-15",
+  "scope": "Result collector hardening after measurement; timed browser fixture and raw samples unchanged.",
+  "originalCollectorSha256": "5d0f9854b6bcd2873624b9beb36fc22f4dc4c1a62d683aaabf0a3e708f57b376",
+  "hardenedCollectorSha256": "e849e2f53129068f07e62461a1f2dc1a6f742a0dcc25682c0e0bffc6e913f504",
+  "unchangedBenchmarkSha256": "5f8c63dd28112388cc73ad17dc4a666d5079337c0bce04c2278f08d83d64c598",
+  "unchangedRawSha256": "ec101700f3b2db3a27cc042b84dd32369cb1a0b499bb5ec189b120453b59db91",
+  "tests": "test_collector.py: 5 tests passed",
+  "summarizerPortability": {
+    "date": "2026-10-15",
+    "scope": "Post-measurement I/O only: explicit --input and --output, local reproduced/ default, no parent-directory inference, no overwrite of different files. Summary and CSV calculations unchanged.",
+    "originalSummarizerSha256": "6aaea94889dcbe378c54d1e68a8259592cc290ca0133e9aa367a0802e7e8ebf2",
+    "portableSummarizerSha256": "aebfe5070fc63cd10fe1f7d4f2f8f6f0a7cedd4549225159e53a40c90aa2d6e4",
+    "tests": "test_summarize.py: 4 tests passed; published summary.json and raw.csv reproduce byte-for-byte."
+  }
+}

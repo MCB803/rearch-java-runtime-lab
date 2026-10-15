@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "labId": "php-sqlite-report-modernization-20261015",
+  "status": "completed",
+  "startedAt": "2026-10-15T09:13:37+00:00",
+  "completedAt": "2026-10-15T09:14:32+00:00",
+  "runtime": {
+    "php": "8.4.26",
+    "sqlite": "3.46.1",
+    "architecture": "aarch64",
+    "image": "docker.io/library/php@sha256:1d2cf2b7d715b5b3aa959f0150ccbcc7b71e0181b637e443abf40a7fb56bf79a",
+    "imageArchitecture": "arm64",
+    "emulated": false,
+    "network": "none",
+    "cpuQuota": 2,
+    "memoryBytes": 1073741824,
+    "phpMemoryLimit": "768M",
+    "opcacheCli": false,
+    "jit": false
+  },
+  "host": {
+    "cpu": "Apple M3",
+    "model": "Mac15,3",
+    "cores": 8,
+    "memoryBytes": 25769803776,
+    "os": "macOS 26.5.2 arm64",
+    "dockerEngine": "27.4.0",
+    "dockerVmMemoryBytes": 8218251264
+  },
+  "design": {
+    "sizes": [
+      1000,
+      3000,
+      10000,
+      30000,
+      60000,
+      100000,
+      200000
+    ],
+    "customersPerReport": 200,
+    "measuredRunsPerArmPerSize": 10,
+    "warmupsPerArmPerSize": 2,
+    "measuredSamples": 350,
+    "warmupSamples": 70,
+    "armsPerSize": 5,
+    "sameRuntime": true,
+    "database": "two fresh in-memory SQLite connections per size; identical data; reused warm across arms and repetitions",
+    "armOrder": "deterministic rotation per round",
+    "aggregateRebuiltEachRun": true,
+    "fixtureAndIndexBuildOutsideReadTiming": true,
+    "indexBuildRecordedSeparately": "one observation per size",
+    "allFullOutputsEquivalent": true,
+    "noSamplesExcluded": true,
+    "noArtificialDelays": true
+  },
+  "security": {
+    "ownedSyntheticFixture": true,
+    "fixtureRows": 12,
+    "tenants": 2,
+    "cases": 6,
+    "adversarialCases": 3,
+    "arms": [
+      "legacy-concatenation",
+      "prepared-only-control",
+      "prepared-and-scoped"
+    ],
+    "networkAccess": false,
+    "publishedAllCases": true
+  },
+  "validation": {
+    "phpHarnessAssertions": 10,
+    "pythonPublicationTests": 6,
+    "independentSecurityDriver": "Python sqlite3 3.50.2; results only, not performance",
+    "sourceAndRawHashes": "SHA256.json"
+  },
+  "sourceReferences": [
+    {
+      "url": "https://www.php.net/manual/en/pdo.prepared-statements.php",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "url": "https://www.php.net/manual/en/function.hrtime.php",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "url": "https://www.sqlite.org/queryplanner.html",
+      "checkedAt": "2026-10-15"
+    }
+  ],
+  "publicationScope": "Synthetic PHP algorithm and SQLite indexing remediation; not a version-upgrade or customer benchmark",
+  "sourceFiles": [
+    "benchmark.php",
+    "test_harness.php",
+    "summarize.py",
+    "test_publication.py",
+    "run.py"
+  ],
+  "rawFiles": [
+    "raw.jsonl",
+    "raw.csv",
+    "query-plans.json",
+    "security.json"
+  ]
+}
